@@ -1,0 +1,8 @@
+.basic {
+    display: flex;
+    justify-content: center;
+    color: #202A44;
+    font-size: 3rem;
+    font-weight: 500;
+    padding-bottom: 20px;
+}

@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    width: 95%;
+    height: 100%;
+    margin: auto; 
+    justify-content: center;
+}
+
+.left {
+    width: 48%;
+    height: fit-content;
+    display: flex;
+    margin-right: auto;
+    background-color: #202A44;
+    border-radius: 10px;
+}
+
+.right {
+    width: 48%;
+    height: fit-content;
+    display: flex;
+    background-color: #202A44;
+    border-radius: 10px;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    margin-top: 20px;
+    margin-left: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.actualType {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: white;
+}
+
+.actualLength {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: white;
+}
