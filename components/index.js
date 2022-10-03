@@ -12,20 +12,21 @@ class Root extends react.Component {
     }
 
     render() {
-        return(<div>
-                    <MenuBar/>
-                    <TypeCards/>
-                    <WorkoutCards/>
-                    <WorkoutCards/>
-                    <WorkoutCards/>
-                    <WorkoutCards/>
-                    <WorkoutCards/>
-                    <WorkoutCards/>
-                    <WorkoutCards/>
-                    <WorkoutCards/>
-                    </div>
+        return(
+            <div>
+                <Head>
+                    <title>Weight Workouts - by Colin FitzGerald</title>
+                    <meta></meta>
+                </Head>
+                <MenuBar/>
+                <TypeCards/>
+                <WorkoutCards/>
+                <WorkoutCards/>
+                <WorkoutCards/>
+                <WorkoutCards/>
+            </div>
         )
     }
 }
 
-export default Root 
+export default Root

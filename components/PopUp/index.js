@@ -8,8 +8,13 @@ class Popup extends react.Component {
     }
     render() {
         return(
-            <div onClick={this.props.onClose}className={styles.basic}>
-                Back to main
+            <div onClick={this.props.onClose} className={styles.basic}>
+                <li className={styles.action}>
+                    Back to main menu
+                </li>
+                <li className={styles.action}>
+                    Log Workout
+                </li>
             </div>
         )
     }
