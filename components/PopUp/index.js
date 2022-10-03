@@ -1,4 +1,5 @@
 import react from "react";
+import Link from "next/link";
 import MenuIcon from '@mui/icons-material/Menu';
 import styles from "./styles.module.css"
 
@@ -8,10 +9,12 @@ class Popup extends react.Component {
     }
     render() {
         return(
-            <div onClick={this.props.onClose} className={styles.basic}>
-                <li className={styles.action}>
+            <div className={styles.basic}>
+                <Link href="/menu">
+                <div className={styles.action}>
                     Back to main menu
-                </li>
+                    </div>
+                </Link>
                 <li className={styles.action}>
                     Log Workout
                 </li>

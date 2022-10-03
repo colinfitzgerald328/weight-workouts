@@ -1,12 +1,12 @@
 import Head from "next/head";
+import Link from "next/link";
 import react from "react";
-import MenuBar from "./MenuBar";
-import TypeCards from "./TypeCards";
-import WorkoutCards from "./WorkoutCards";
+import MenuBar from "../components/MenuBar";
+import WorkoutBar from "../components/WorkoutBar";
 import styles from "./styles.module.css"
 
 
-class Root extends react.Component {
+class MenuPage extends react.Component {
     constructor(props) {
         super(props)
     }
@@ -22,14 +22,10 @@ class Root extends react.Component {
                     <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap" rel="stylesheet"></link>
                 </Head>
                 <MenuBar/>
-                <TypeCards/>
-                <WorkoutCards/>
-                <WorkoutCards/>
-                <WorkoutCards/>
-                <WorkoutCards/>
+                <WorkoutBar/>
             </div>
         )
     }
 }
 
-export default Root
+export default MenuPage
