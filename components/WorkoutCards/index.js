@@ -10,11 +10,18 @@ class WorkoutCards extends react.Component {
                     <div className={styles.title}>
                         Hang Clean 
                     </div>
-                    <div className={styles.actualType}>
-                        110
-                        
-                    </div>
                 </div>
+                <div className={styles.flexContainer}>
+                        <div className={styles.weightLbs}>
+                            110lbs
+                        </div>
+                        <div className={styles.weightLbs}>
+                            3 sets
+                        </div>
+                        <div className={styles.weightLbs}>
+                            10 reps
+                        </div>
+                    </div>
             </div>
         </div>
         )

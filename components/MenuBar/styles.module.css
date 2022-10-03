@@ -15,7 +15,12 @@
 }
 
 .icon {
+    cursor: pointer;
     display: flex;
     margin-left: auto;
     margin-right: 1rem;
+}
+
+.icon:hover {
+    color: black;
 }

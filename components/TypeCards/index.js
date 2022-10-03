@@ -3,6 +3,7 @@ import styles from "./styles.module.css"
 
 class TypeCards extends react.Component {
     render() {
+        constructor
         return(
             <div className={styles.container}>
                 <div className={styles.left}>

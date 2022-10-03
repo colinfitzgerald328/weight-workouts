@@ -3,14 +3,19 @@ import MenuIcon from '@mui/icons-material/Menu';
 import styles from "./styles.module.css"
 
 class MenuBar extends react.Component {
+    constructor(props) {
+        super(props)
+        this.state={"showPopUp": false}
+    }
     render() {
+        console.log(this.state.showPopUp)
         return(
             <div className={styles.basic}>
-                <div className={styles.text}>
+                <div onClick={()=> console.log("clicked")} className={styles.text}>
                     Main Menu 
                 </div>
-                <div className={styles.icon}>
-                    <MenuIcon/>
+                <div onClick={()=> console.log("clicked")} className={styles.icon}>
+                    <MenuIcon onClick={console.log("clicked")}/>
                 </div>
             </div>
         )

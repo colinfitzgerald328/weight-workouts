@@ -1,8 +1,7 @@
 import react from "react";
-import MenuIcon from '@mui/icons-material/Menu';
 import styles from "./styles.module.css"
 
-class MenuBar extends react.Component {
+class PopUp extends react.Component {
     render() {
         return(
             <div className={styles.basic}>
@@ -17,4 +16,4 @@ class MenuBar extends react.Component {
     }
 }
 
-export default MenuBar
+export default PopUp
