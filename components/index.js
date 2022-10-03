@@ -12,11 +12,7 @@ class Root extends react.Component {
     }
 
     render() {
-        return(
-            <div>
-                <Head>
-                    <title>Weight Workouts - By Colin FitzGerald</title>
-                    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        return(<div>
                     <MenuBar/>
                     <TypeCards/>
                     <WorkoutCards/>
@@ -27,9 +23,7 @@ class Root extends react.Component {
                     <WorkoutCards/>
                     <WorkoutCards/>
                     <WorkoutCards/>
-                </Head>
-                
-            </div>
+                    </div>
         )
     }
 }

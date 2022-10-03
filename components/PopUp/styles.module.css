@@ -1,21 +1,14 @@
 .basic {
     display: flex;
-    color: white; 
+    color: black; 
     align-items: center;
-    font-size: 2rem;
+    justify-content: center;
+    font-size: 1rem;
     font-weight: 500;
-    background-color: #202A44;
-    height: 80px; 
-}
-
-.text {
-    display: flex;
-    margin-right: auto;
-    margin-left: 1rem;
-}
-
-.icon {
-    display: flex;
+    background-color: white;
+    height: 50px; 
+    width: 100px;
     margin-left: auto;
-    margin-right: 1rem;
+    margin-right: 2.3rem;
+    cursor: pointer;
 }

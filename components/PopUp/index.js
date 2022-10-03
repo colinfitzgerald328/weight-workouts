@@ -1,19 +1,18 @@
 import react from "react";
+import MenuIcon from '@mui/icons-material/Menu';
 import styles from "./styles.module.css"
 
-class PopUp extends react.Component {
+class Popup extends react.Component {
+    constructor(props) {
+        super(props)
+    }
     render() {
         return(
-            <div className={styles.basic}>
-                <div className={styles.text}>
-                    Main Menu 
-                </div>
-                <div className={styles.icon}>
-                    <MenuIcon/>
-                </div>
+            <div onClick={this.props.onClose}className={styles.basic}>
+                Back to main
             </div>
         )
     }
 }
 
-export default PopUp
+export default Popup
