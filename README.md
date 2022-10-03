@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-[Current deployment](https://www.weight-workouts.vercel.app)
+[Current deployment](https://weight-workouts.vercel.app)
 ![Screen Shot 2022-10-02 at 11 32 15 PM](https://user-images.githubusercontent.com/64982557/193514411-b9a23539-76d2-4d87-ae9a-219daa6c4c8f.png)
 ![Screen Shot 2022-10-02 at 11 32 23 PM](https://user-images.githubusercontent.com/64982557/193514413-ea848df5-4c5c-4c64-a1b5-aebc08ff4806.png)
 
