@@ -23,6 +23,9 @@ class MenuPage extends react.Component {
                 </Head>
                 <MenuBar/>
                 <WorkoutBar/>
+                <WorkoutBar/>
+                <WorkoutBar/>
+                <WorkoutBar/>
             </div>
         )
     }

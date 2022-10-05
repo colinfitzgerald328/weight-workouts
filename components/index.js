@@ -17,12 +17,14 @@ class Root extends react.Component {
                 <Head>
                     <title>Weight Workouts - by Colin FitzGerald</title>
                     <meta></meta>
-                    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-                    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap" rel="stylesheet"></link>
+                    <link rel="icon" href="https://colinfitzgerald328.github.io/assets/images/FitzGerald-Colin-Homework%206-01.jpg"/>
                 </Head>
                 <MenuBar/>
                 <TypeCards/>
+                <WorkoutCards/>
+                <WorkoutCards/>
+                <WorkoutCards/>
+                <WorkoutCards/>
                 <WorkoutCards/>
                 <WorkoutCards/>
                 <WorkoutCards/>

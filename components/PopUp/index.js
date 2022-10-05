@@ -12,12 +12,17 @@ class Popup extends react.Component {
             <div className={styles.basic}>
                 <Link href="/menu">
                 <div className={styles.action}>
-                    Back to main menu
+                    Main
                     </div>
                 </Link>
-                <li className={styles.action}>
+                <div className={styles.action}>
                     Log Workout
-                </li>
+                </div>
+                <Link href="/profile">
+                <div className={styles.action}>
+                    Profile
+                </div>
+                </Link>
             </div>
         )
     }

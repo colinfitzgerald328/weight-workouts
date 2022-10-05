@@ -1,12 +1,11 @@
 .basic {
     position: absolute;
     color: black; 
-    font-size: 0.8rem;
+    font-size: 1.25rem;
     font-weight: 500;
     background-color: white;
-    border-radius: 5px;
-    height: fit; 
-    width: 150px;
+    border-radius: 5px; 
+    width: 10rem;
     right: 0; 
     margin-right: 1rem;
     top: 3.3rem;
@@ -21,10 +20,12 @@
 
 .action {
     display: flex;
-    align-items:center ;
-    margin-left: 1rem; 
+    margin-left: auto;
+    width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
+    justify-content: flex-end;
+    padding-right: 1rem;
 }
 
 .action:hover {
