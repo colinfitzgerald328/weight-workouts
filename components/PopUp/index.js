@@ -15,9 +15,11 @@ class Popup extends react.Component {
                     Main
                     </div>
                 </Link>
+                <Link href="/logWorkout">
                 <div className={styles.action}>
                     Log Workout
                 </div>
+                </Link>
                 <Link href="/profile">
                 <div className={styles.action}>
                     Profile
