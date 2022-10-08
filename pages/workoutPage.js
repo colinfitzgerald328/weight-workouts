@@ -1,6 +1,6 @@
 import Head from "next/head";
 import react from "react";
-import MenuBar from "../components/MenuBar";
+import WorkoutMenuBar from "../components/WorkoutMenuBar";
 import TypeCards from "../components/TypeCards";
 import WorkoutCards from "../components/WorkoutCards";
 import styles from "./styles.module.css"
@@ -20,7 +20,7 @@ class WorkoutPage extends react.Component {
                     <meta></meta>
                     <link rel="icon" href="https://colinfitzgerald328.github.io/assets/images/FitzGerald-Colin-Homework%206-01.jpg"/>
                 </Head>
-                <MenuBar/>
+                <WorkoutMenuBar/>
                 <TypeCards/>
                 <WorkoutCards/>
                 <WorkoutCards/>
