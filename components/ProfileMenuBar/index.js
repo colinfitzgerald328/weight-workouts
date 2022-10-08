@@ -31,7 +31,7 @@ class ProfileMenuBar extends react.Component {
           <div>
           <div onClick={()=> console.log(this.props)} className={styles.basic}>
               <div className={styles.text}>
-                  Main Menu 
+                  Profile
               </div>
               <div data={this.props.data} onClick={()=> this.showPopUp()} className={styles.icon}>
                   <MenuIcon/>
