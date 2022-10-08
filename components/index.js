@@ -4,33 +4,24 @@ import MenuBar from "./MenuBar";
 import TypeCards from "./TypeCards";
 import WorkoutCards from "./WorkoutCards";
 import styles from "./styles.module.css"
+import MenuPage from "../pages/menu";
 
 
 class Root extends react.Component {
     constructor(props) {
         super(props)
+        this.state=({"loggedIn": false})
     }
 
     render() {
+        if (this.state.loggedIn) {
         return(
             <div className={styles.basic}>
-                <Head>
-                    <title>Weight Workouts - by Colin FitzGerald</title>
-                    <meta></meta>
-                    <link rel="icon" href="https://colinfitzgerald328.github.io/assets/images/FitzGerald-Colin-Homework%206-01.jpg"/>
-                </Head>
-                <MenuBar/>
-                <TypeCards/>
-                <WorkoutCards/>
-                <WorkoutCards/>
-                <WorkoutCards/>
-                <WorkoutCards/>
-                <WorkoutCards/>
-                <WorkoutCards/>
-                <WorkoutCards/>
-                <WorkoutCards/>
+                <MenuPage/>
             </div>
-        )
+        ) } else {
+            return(<div></div>)
+        }
     }
 }
 

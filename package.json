@@ -14,6 +14,7 @@
     "@mui/icons-material": "^5.10.6",
     "@mui/material": "^5.10.7",
     "evergreen-ui": "^6.10.4",
+    "firebase": "^9.10.0",
     "mdb-react-ui-kit": "^4.2.0",
     "next": "12.3.1",
     "react": "18.2.0",

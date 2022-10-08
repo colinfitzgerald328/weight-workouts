@@ -10,7 +10,7 @@ class Popup extends react.Component {
     render() {
         return(
             <div className={styles.basic}>
-                <Link href="/menu">
+                <Link href="/">
                 <div className={styles.action}>
                     Main
                     </div>

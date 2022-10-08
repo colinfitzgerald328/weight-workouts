@@ -5,7 +5,7 @@ class WorkoutBar extends react.Component {
     render() {
         return(
         <div className={styles.container}>
-            <div onClick={()=> location.href="/"} className={styles.left}>
+            <div onClick={()=> location.href="/workoutPage"} className={styles.left}>
                 <div className={styles.textContainer}>
                     <div className={styles.title1}>
                         Weight Workout
