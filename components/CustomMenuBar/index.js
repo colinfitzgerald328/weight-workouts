@@ -1,10 +1,10 @@
 import MenuIcon from '@mui/icons-material/Menu';
 import react from 'react';
-import Popup from '../PopUp';
+import LogWorkoutPopup from '../LogWorkoutPopup';
 import 'reactjs-popup/dist/index.css';
 import styles from "./styles.module.css"
 
-class MenuBar extends react.Component {
+class CustomMenuBar extends react.Component {
     constructor(props) {
         super(props)
         this.state={"showPopUp": false, numClicks: 0}
@@ -23,7 +23,7 @@ class MenuBar extends react.Component {
     }
     render() {
       if (this.state.numClicks == 1) {
-        var popUp = <Popup onLogOut={this.props.onLogOut}/>
+        var popUp = <LogWorkoutPopup data={this.props.data} onLogOut={this.props.onLogOut}/>
     } else {
         var popUp = (<div></div>)
     }
@@ -43,4 +43,4 @@ class MenuBar extends react.Component {
     }
 }
 
-export default MenuBar
+export default CustomMenuBar

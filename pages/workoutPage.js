@@ -6,12 +6,13 @@ import WorkoutCards from "../components/WorkoutCards";
 import styles from "./styles.module.css"
 
 
-class Root extends react.Component {
+class WorkoutPage extends react.Component {
     constructor(props) {
         super(props)
     }
 
     render() {
+        console.log(this.props.data)
         return(
             <div className={styles.basic}>
                 <Head>
@@ -34,4 +35,4 @@ class Root extends react.Component {
     }
 }
 
-export default Root
+export default WorkoutPage

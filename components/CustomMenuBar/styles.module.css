@@ -6,16 +6,21 @@
     font-weight: 500;
     background-color: #202A44;
     height: 80px; 
+    width: 100%; 
 }
 
 .text {
     display: flex;
-    margin-right: auto;
     margin-left: 1rem;
 }
 
 .icon {
+    cursor: pointer;
     display: flex;
     margin-left: auto;
     margin-right: 1rem;
+}
+
+.icon:hover {
+    color: aliceblue;
 }

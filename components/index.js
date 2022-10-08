@@ -17,6 +17,18 @@ class Root extends react.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentDidMount() {
+        if (localStorage.getItem('loggedInState')) {
+            this.setState({loggedIn: true})
+        }
+    }
+
+    logOut() {
+        window.localStorage.clear();
+        this.setState({loggedIn: false, data: []})
+    }
+
+
     showPopup() {
         this.setState({showPopup: true})
     }
@@ -24,8 +36,6 @@ class Root extends react.Component {
     hidePopup() {
         this.setState({showPopup: false})
     }
-
-    
 
     handlePassword(event) {
         this.setState({password: event.target.value});
@@ -42,6 +52,7 @@ class Root extends react.Component {
         xhr.onreadystatechange = function() { 
             if (xhr.readyState == 4 && xhr.status == 200) {
                 localStorage.setItem('loggedInState', true)
+                self.setState({loggedIn: true})
                 var data = JSON.parse(xhr.responseText)
                 self.setState({data: data["operation"]})
             }
@@ -65,10 +76,10 @@ class Root extends react.Component {
 
     render() {
         console.log(this.state.showPopup)
-        if (this.state.data == 'success') {
+        if (this.state.loggedIn) {
         return(
             <div className={styles.basic}>
-                <MenuPage/>
+                <MenuPage onLogOut={this.logOut.bind(this)}/>
             </div>
         ) } else {
             if (this.state.showPopup == true) {
@@ -97,7 +108,7 @@ class Root extends react.Component {
                                 Submit
                             </div>
                             <div className={styles.addNewUser}>
-                                New here? Click this button to create a new profile
+                                New here? Click this button to create a profile
                             </div>
                             <div onClick={this.showPopup.bind(this)} className={styles.submit}>
                                 Create

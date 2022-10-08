@@ -1,11 +1,15 @@
 import react from "react";
+import Link from "next/link";
 import styles from "./styles.module.css"
 
 class WorkoutBar extends react.Component {
     render() {
         return(
+    <Link href={{
+        pathname: '/workoutPage', query: this.props.data
+        }}>
         <div className={styles.container}>
-            <div onClick={()=> location.href="/workoutPage"} className={styles.left}>
+            <div className={styles.left}>
                 <div className={styles.textContainer}>
                     <div className={styles.title1}>
                         Weight Workout
@@ -27,6 +31,7 @@ class WorkoutBar extends react.Component {
                     </div>
             </div>
         </div>
+        </Link>
         )
     }
 }
