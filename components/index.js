@@ -11,7 +11,7 @@ import MenuPage from "../pages/menu";
 class Root extends react.Component {
     constructor(props) {
         super(props)
-        this.state=({loggedIn: false, password: "", username: "", showPopup: false, results:{}, account_id: []})
+        this.state=({loggedIn: false, password: "", username: "", showPopup: false, data:{}, results:{}, account_id: [], operation:{}})
         this.handlePassword = this.handlePassword.bind(this);
         this.handleUsername = this.handleUsername.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,7 +25,7 @@ class Root extends react.Component {
 
     logOut() {
         window.localStorage.clear();
-        this.setState({loggedIn: false, data: []})
+        this.setState({loggedIn: false, data: {},  operation: {}})
     }
 
 
@@ -52,10 +52,13 @@ class Root extends react.Component {
         xhr.onreadystatechange = function() { 
             if (xhr.readyState == 4 && xhr.status == 200) {
                 localStorage.setItem('loggedInState', true)
-                self.setState({loggedIn: true})
                 var data = JSON.parse(xhr.responseText)
-                self.setState({results: data.length, account_id: data[0]["account_id"]})
-                localStorage.setItem('accountId', data[0]["account_id"])
+                self.setState({operation: data["operation"]})
+                if (data["operation"] == 'success') {
+                    localStorage.setItem('accountId', data["account_info"][0]["account_id"])
+                } else {
+                    console.log("error")
+                }
             }
         }   
 
@@ -76,8 +79,7 @@ class Root extends react.Component {
     }
 
     render() {
-        console.log(this.state.account_id)
-        if (this.state.loggedIn > 0) {
+        if (this.state.operation == 'success' || this.state.loggedIn) {
         return(
             <div className={styles.basic}>
                 <MenuPage account_id={this.state.account_id} onLogOut={this.logOut.bind(this)}/>
