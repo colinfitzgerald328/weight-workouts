@@ -26,6 +26,10 @@
     cursor: pointer;
 }
 
+.plus:hover {
+    background-color: #376438;
+}
+
 .minus {
     display: flex;
     width: 30%;
@@ -38,6 +42,10 @@
     margin-top: 10px;
     padding: 10px;
     cursor: pointer;
+}
+
+.minus:hover {
+    background-color: #a1302a;
 }
 
 
@@ -88,9 +96,13 @@
     width: 170px;
     margin-right: auto; 
     margin-left: 20px;
+    padding: 10px;
     color: black;
     font-size: 1.2rem;
     font-weight: 900;
+    background-color: #374464;
+    border: 1px solid #374464;
+    border-radius: 10px;
 }
 
 .title1 {
@@ -111,15 +123,19 @@
 }
 
 .weightLbs {
+    border-radius: 10px;
     display: flex;
     color: black; 
+    background-color: #657aae;
+    border: 1px solid #657aae;
     margin-bottom: 10px;
     height: 50px;
     width: 100px;
     margin-top: 5px;
     margin-bottom: 20px;
     font-size: 16px;
-    color: black; 
+    color: white; 
+    padding: 10px;
 }
 
 .weightLbs1 {
