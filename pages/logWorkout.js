@@ -61,15 +61,17 @@ class LogWorkoutPage extends react.Component {
                 </Head>
                 <CustomMenuBar/>
                 <div className={styles.flexContainer}>
-                <div className={styles.plus} onClick={this.increase}>
-                    Add
+                    <div className={styles.plus} onClick={this.increase}>
+                        Add
+                    </div>
+                    <div className={styles.minus} onClick={this.decrease}>
+                        Remove
+                    </div>
                 </div>
-                <div className={styles.minus} onClick={this.decrease}>
-                    Remove
+                <div className={styles.scroller}>
+                    {items}
                 </div>
-                </div>
-                {items}
-                {submit}
+                <div className={styles.submit} onClick={()=> console.log(items.length)}>Submit</div>
             </div>
         )
     }

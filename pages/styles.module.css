@@ -147,8 +147,19 @@
     background-color: dodgerblue;
     text-transform: uppercase;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 100px;
+}
+
+
+.scroller {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    height: 55vh;
+    width: 100%;
+    background-color: #13151a;
+    border-radius: 10px;
 }
