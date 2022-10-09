@@ -15,11 +15,12 @@ class MainMenuPopup extends react.Component {
 
 
     render() {
+        console.log(window.localStorage)
         return(
             <div className={styles.basic}>
                 <Link href={{
       pathname: '/logWorkout', 
-      query: this.props.data
+      query: this.props.account_id
     }}>
                 <div className={styles.action1}>
                     Log Workout

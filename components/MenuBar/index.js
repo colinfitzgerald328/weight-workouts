@@ -23,7 +23,7 @@ class MenuBar extends react.Component {
     }
     render() {
       if (this.state.numClicks == 1) {
-        var popUp = <Popup onLogOut={this.props.onLogOut}/>
+        var popUp = <Popup account_id={this.props.account_id} onLogOut={this.props.onLogOut}/>
     } else {
         var popUp = (<div></div>)
     }

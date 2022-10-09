@@ -11,7 +11,7 @@ import MenuPage from "../pages/menu";
 class Root extends react.Component {
     constructor(props) {
         super(props)
-        this.state=({loggedIn: false, password: "", username: "", showPopup: false, data:{}})
+        this.state=({loggedIn: false, password: "", username: "", showPopup: false, results:{}, account_id: []})
         this.handlePassword = this.handlePassword.bind(this);
         this.handleUsername = this.handleUsername.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -54,7 +54,8 @@ class Root extends react.Component {
                 localStorage.setItem('loggedInState', true)
                 self.setState({loggedIn: true})
                 var data = JSON.parse(xhr.responseText)
-                self.setState({data: data["operation"]})
+                self.setState({results: data.length, account_id: data[0]["account_id"]})
+                localStorage.setItem('accountId', data[0]["account_id"])
             }
         }   
 
@@ -75,11 +76,11 @@ class Root extends react.Component {
     }
 
     render() {
-        console.log(this.state.showPopup)
-        if (this.state.loggedIn) {
+        console.log(this.state.account_id)
+        if (this.state.loggedIn > 0) {
         return(
             <div className={styles.basic}>
-                <MenuPage onLogOut={this.logOut.bind(this)}/>
+                <MenuPage account_id={this.state.account_id} onLogOut={this.logOut.bind(this)}/>
             </div>
         ) } else {
             if (this.state.showPopup == true) {

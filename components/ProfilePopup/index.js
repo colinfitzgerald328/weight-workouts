@@ -15,6 +15,7 @@ class ProfilePopup extends react.Component {
 
 
     render() {
+        console.log(window.localStorage)
         return(
             <div className={styles.basic}>
                 <Link href={{

@@ -21,7 +21,7 @@ class MenuPage extends react.Component {
                     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
                     <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap" rel="stylesheet"></link>
                 </Head>
-                <MenuBar onLogOut={this.props.onLogOut}/>
+                <MenuBar account_id={this.props.account_id} onLogOut={this.props.onLogOut}/>
                 <WorkoutBar/>
                 <WorkoutBar/>
                 <WorkoutBar/>
