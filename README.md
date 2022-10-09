@@ -1,40 +1,28 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+
+I'm currently building an app to log workouts. Stack is next.js and react. 
+
+The build is currently optimized for mobile, but I plan to build a more desktop friendly version once I have plugged in all of the APIs. 
+
+The backend is a Flask App that serves MySQL via Google Cloud. 
+
+If you would like to collaborate, shoot me an email: colinfitzgerald@berkeley.edu. 
+
+Here are some screenshots: 
+
+**Login Page**
+
+![IMG_4566](https://user-images.githubusercontent.com/64982557/194742311-89823915-4c85-4bf0-8566-7a5decc91fe2.jpeg)
+
+**Home Page**
+
+![IMG_4567](https://user-images.githubusercontent.com/64982557/194742326-2a784afd-335e-4e6f-ae0d-09991128c594.jpeg)
+
+**Log Workout Page**
+
+![IMG_4568](https://user-images.githubusercontent.com/64982557/194742427-0e7783ea-fb5a-4a9b-830a-dbe5585d42a6.jpeg)
+
+
+
 [Current deployment link](https://weight-workouts.vercel.app)
-
-
-![Screen Shot 2022-10-02 at 11 32 15 PM](https://user-images.githubusercontent.com/64982557/193514411-b9a23539-76d2-4d87-ae9a-219daa6c4c8f.png)
-![Screen Shot 2022-10-02 at 11 32 23 PM](https://user-images.githubusercontent.com/64982557/193514413-ea848df5-4c5c-4c64-a1b5-aebc08ff4806.png)
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
