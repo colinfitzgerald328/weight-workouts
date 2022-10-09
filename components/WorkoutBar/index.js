@@ -1,21 +1,22 @@
 import react from "react";
 import Link from "next/link";
+import Moment from 'react-moment';
 import styles from "./styles.module.css"
 
 class WorkoutBar extends react.Component {
     render() {
         return(
     <Link href={{
-        pathname: '/workoutPage', query: this.props.data
+        pathname: '/workoutPage', query: "timestamp=" + this.props.timestamp
         }}>
-        <div className={styles.container}>
+        <div onClick={()=> console.log(this.props.timestamp)}className={styles.container}>
             <div className={styles.left}>
                 <div className={styles.textContainer}>
                     <div className={styles.title1}>
                         Weight Workout
                     </div>
                     <div className={styles.title2}>
-                        10/11/2022
+                        <Moment format="MMMM Do YYYY">{this.props.timestamp * 1000}</Moment>
                     </div>
                 </div>
                 <div className={styles.flexContainer}>
@@ -23,10 +24,10 @@ class WorkoutBar extends react.Component {
                             Focus: Legs 
                         </div>
                         <div className={styles.weightLbs}>
-                            40 sets
+                            Sets: {this.props.sets}
                         </div>
                         <div className={styles.weightLbs}>
-                            200 reps
+                            Total Reps: {this.props.total_reps}
                         </div>
                     </div>
             </div>

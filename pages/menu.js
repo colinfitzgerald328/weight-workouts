@@ -9,9 +9,41 @@ import styles from "./styles.module.css"
 class MenuPage extends react.Component {
     constructor(props) {
         super(props)
+        this.state={data: []}
+    }
+
+    componentDidMount() {
+        this.getFeed.bind(this)()
+    }
+
+    getFeed() {
+
+        var xhr = new XMLHttpRequest();
+        var self = this
+        xhr.onreadystatechange = function() { 
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var data = JSON.parse(xhr.responseText)
+                self.setState({data: data["feed"]})
+            }
+        }
+
+
+        const theUrl = "https://weight-workouts.uc.r.appspot.com/getFeed?account_id=" + localStorage.getItem("accountId")
+
+        xhr.open("GET", theUrl, true); // true for asynchronous 
+        xhr.send(null);
     }
 
     render() {
+        var workoutBarDivs = this.state.data.map (data => {
+            var timestamp = data["TIMESTAMP"]
+            var sets = data["sets"]
+            var total_reps = data["total_reps"]
+            return(
+                <div key={timestamp}>
+                    <WorkoutBar timestamp={timestamp} sets={sets} total_reps={total_reps}/>
+                </div>
+            )});
         return(
             <div className={styles.basic}>
                 <Head>
@@ -22,10 +54,7 @@ class MenuPage extends react.Component {
                     <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap" rel="stylesheet"></link>
                 </Head>
                 <MenuBar account_id={this.props.account_id} onLogOut={this.props.onLogOut}/>
-                <WorkoutBar/>
-                <WorkoutBar/>
-                <WorkoutBar/>
-                <WorkoutBar/>
+                {workoutBarDivs}
             </div>
         )
     }
