@@ -13,15 +13,15 @@ Here are some screenshots:
 
 **Login Page**
 
-![IMG_4566](https://user-images.githubusercontent.com/64982557/194742311-89823915-4c85-4bf0-8566-7a5decc91fe2.jpeg)
+<img src="https://user-images.githubusercontent.com/64982557/194742311-89823915-4c85-4bf0-8566-7a5decc91fe2.jpeg" width="330" height="700">
 
 **Home Page**
 
-![IMG_4567](https://user-images.githubusercontent.com/64982557/194742326-2a784afd-335e-4e6f-ae0d-09991128c594.jpeg)
+<img src="https://user-images.githubusercontent.com/64982557/194742326-2a784afd-335e-4e6f-ae0d-09991128c594.jpeg" width="330" height="700">
 
 **Log Workout Page**
 
-![IMG_4568](https://user-images.githubusercontent.com/64982557/194742427-0e7783ea-fb5a-4a9b-830a-dbe5585d42a6.jpeg)
+<img src="https://user-images.githubusercontent.com/64982557/194742427-0e7783ea-fb5a-4a9b-830a-dbe5585d42a6.jpeg" width="330" height="700">
 
 
 
