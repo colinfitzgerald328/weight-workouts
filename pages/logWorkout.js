@@ -10,7 +10,7 @@ import { useRouter } from 'next/router'
 class LogWorkoutPage extends react.Component {
     constructor(props) {
         super(props)
-        this.state={numItems: 0, items: {}}
+        this.state={numItems: 1, items: {}}
         this.increase = this.increase.bind(this); 
         this.decrease = this.decrease.bind(this)
 
