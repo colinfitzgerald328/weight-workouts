@@ -93,7 +93,7 @@ class Root extends react.Component {
                     <Head>
                         <title>Weight Workouts | Login Page</title>
                         <meta name="description" content="Transaction history"/>
-                        <link rel="icon" href="https://www.commandbrowser.org/static/media/commandicon.9f6a6cd2.png"/>
+                        <link rel="icon" href="https://colinfitzgerald328.github.io/assets/images/FitzGerald-Colin-Homework%206-01.jpg"/>
                     </Head>
                     <div className={styles.form}>
                             <img className={styles.img} src={cfLogo}/>
