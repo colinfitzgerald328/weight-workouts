@@ -9,7 +9,7 @@ class WorkoutCards extends react.Component {
         <div className={styles.container}>
             <div className={styles.textContainer}>
                 <div className={styles.title}>
-                    Hang Clean 
+                    {this.props.exercise_type}
                 </div>
                 <div className={styles.title1}>
                     <CheckCircleIcon/>
@@ -17,13 +17,12 @@ class WorkoutCards extends react.Component {
             </div>
             <div className={styles.flexContainer}>
                 <div className={styles.weightLbs}>
-                    110lbs
+                    {this.props.weight} lbs
                 </div>
                 <div className={styles.weightLbs1}>
-                    40 sets
                 </div>
                 <div className={styles.weightLbs2}>
-                    10 reps
+                    {this.props.reps} reps
                 </div>
             </div>
         </div>

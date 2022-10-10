@@ -37,6 +37,17 @@ class WorkoutPage extends react.Component {
 
     render() {
         console.log(this.state.data)
+        var workoutCardDivs = this.state.data.map (data => {
+            var timestamp = data["TIMESTAMP"]
+            var exercise_type = data["exercise_type"]
+            var reps = data["reps"]
+            var weight = data["weight"]
+
+            return(
+                <div>
+                    <WorkoutCards timestamp={timestamp} exercise_type={exercise_type} reps={reps} weight={weight}/>
+                </div>
+            )});
         return(
             <div className={styles.basic}>
                 <Head>
@@ -46,14 +57,7 @@ class WorkoutPage extends react.Component {
                 </Head>
                 <WorkoutMenuBar/>
                 <TypeCards/>
-                <WorkoutCards/>
-                <WorkoutCards/>
-                <WorkoutCards/>
-                <WorkoutCards/>
-                <WorkoutCards/>
-                <WorkoutCards/>
-                <WorkoutCards/>
-                <WorkoutCards/>
+                {workoutCardDivs}
             </div>
         )
     }
