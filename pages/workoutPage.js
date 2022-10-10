@@ -44,7 +44,7 @@ class WorkoutPage extends react.Component {
             var weight = data["weight"]
 
             return(
-                <div>
+                <div key={timestamp}>
                     <WorkoutCards timestamp={timestamp} exercise_type={exercise_type} reps={reps} weight={weight}/>
                 </div>
             )});
