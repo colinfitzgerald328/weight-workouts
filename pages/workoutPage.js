@@ -9,11 +9,12 @@ import styles from "./styles.module.css"
 class WorkoutPage extends react.Component {
     constructor(props) {
         super(props)
-        this.state={data: []}
+        this.state={data: [], stats: []}
     }
 
     componentDidMount() {
         this.getWorkoutDetails.bind(this)()
+        this.getWorkoutStats.bind(this)()
     }
 
 
@@ -35,8 +36,25 @@ class WorkoutPage extends react.Component {
         xhr.send(null);
     }
 
+    getWorkoutStats() {
+
+        var xhr = new XMLHttpRequest();
+        var self = this
+        xhr.onreadystatechange = function() { 
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var data = JSON.parse(xhr.responseText)
+                self.setState({stats: data["workout_stats"][0]})
+            }
+        }
+
+
+        const theUrl = "https://weight-workouts.uc.r.appspot.com/getWorkoutStats?timestamp=" + this.props.timestamp + "&account_id=" + localStorage.getItem("accountId")
+
+        xhr.open("GET", theUrl, true); // true for asynchronous 
+        xhr.send(null);
+    }
+
     render() {
-        console.log(this.state.data)
         var workoutCardDivs = this.state.data.map (data => {
             var timestamp = data["TIMESTAMP"]
             var exercise_type = data["exercise_type"]
@@ -56,7 +74,7 @@ class WorkoutPage extends react.Component {
                     <link rel="icon" href="https://colinfitzgerald328.github.io/assets/images/FitzGerald-Colin-Homework%206-01.jpg"/>
                 </Head>
                 <WorkoutMenuBar/>
-                <TypeCards/>
+                <TypeCards type={this.state.stats.exercise_type} length={this.state.stats.length}/>
                 {workoutCardDivs}
             </div>
         )
