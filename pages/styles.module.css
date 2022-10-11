@@ -190,3 +190,10 @@
     border-radius: 4px;
     box-sizing: border-box;
   }
+
+  .noWorkouts {
+    margin-top: 20px;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+  }

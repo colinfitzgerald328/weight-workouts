@@ -35,6 +35,7 @@ class MenuPage extends react.Component {
     }
 
     render() {
+        if (this.state.data != null) {
         var workoutBarDivs = this.state.data.map (data => {
             var timestamp = data["TIMESTAMP"]
             var sets = data["sets"]
@@ -56,7 +57,21 @@ class MenuPage extends react.Component {
                 <MenuBar account_id={this.props.account_id} onLogOut={this.props.onLogOut}/>
                 {workoutBarDivs}
             </div>
-        )
+        )} else {
+            return (            <div className={styles.basic}>
+                <Head>
+                    <title>Weight Workouts - by Colin FitzGerald</title>
+                    <meta></meta>
+                    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+                    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap" rel="stylesheet"></link>
+                </Head>
+                <MenuBar account_id={this.props.account_id} onLogOut={this.props.onLogOut}/>
+                <div className={styles.noWorkouts}>
+                    No workouts yet! Use the menu to log a workout
+                </div>
+            </div>)
+        }
     }
 }
 
