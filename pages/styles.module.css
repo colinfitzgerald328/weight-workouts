@@ -179,3 +179,14 @@
     background-color: #13151a;
     border-radius: 10px;
 }
+
+.select {
+    width: 30%;
+    padding: 12px 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }

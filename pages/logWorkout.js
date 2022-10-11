@@ -10,13 +10,15 @@ import styles from "./styles.module.css";
 class LogWorkoutPage extends react.Component {
     constructor(props) {
         super(props)
-        this.state={numItems: 1, items: {}, exercise_details: [], exercise_name: null, weight: null, reps: null}
+        this.state={numItems: 1, items: {}, exercise_details: [], exercise_name: null, weight: null, reps: null, type: "", length: ""}
         this.increase = this.increase.bind(this); 
         this.decrease = this.decrease.bind(this);
         this.getExerciseName = this.getExerciseName.bind(this);
         this.getWeight = this.getWeight.bind(this);
         this.getReps = this.getReps.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.getLength = this.getLength.bind(this);
+        this.getType = this.getType.bind(this);
     }
 
     increase() {
@@ -49,6 +51,14 @@ class LogWorkoutPage extends react.Component {
         this.setState({reps: event.target.value})
     }
 
+    getLength(event) {
+        this.setState({length: event.target.value})
+    }
+
+    getType(event) {
+        this.setState({type: event.target.value})
+    }
+
     handleSubmit() {
         this.state.exercise_details.push({"account_id": localStorage.getItem("accountId"), "exercise_type": this.state.exercise_name, "weight": this.state.weight, "reps": this.state.reps})
         console.log(this.state.exercise_details)
@@ -65,6 +75,8 @@ class LogWorkoutPage extends react.Component {
 
         // create a JSON object */ 
         const json = {
+            /* "type": this.state.type, 
+            "length": this.state.length, */ 
             "exercise_details": this.state.exercise_details, 
         };
 
@@ -108,6 +120,8 @@ class LogWorkoutPage extends react.Component {
                     <meta></meta>
                 </Head>
                 <CustomMenuBar/>
+                <input type="text" className={styles.select} placeholder="length (minutes)" value={this.state.value} onChange={this.getLength}/>
+                <input type="text" className={styles.select} placeholder="type of workout" value={this.state.value} onChange={this.getType}/>
                 <div className={styles.flexContainer}>
                     <div className={styles.plus} onClick={this.increase}>
                         Add
