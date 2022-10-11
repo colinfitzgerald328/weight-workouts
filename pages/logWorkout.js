@@ -75,7 +75,8 @@ class LogWorkoutPage extends react.Component {
 
         // create a JSON object */ 
         const json = {
-            /* "type": this.state.type, 
+            /* "account_id": localStorage.getItem("accountId"),
+            "type": this.state.type, 
             "length": this.state.length, */ 
             "exercise_details": this.state.exercise_details, 
         };
