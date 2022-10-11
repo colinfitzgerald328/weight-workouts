@@ -24,7 +24,7 @@ class LogWorkoutPage extends react.Component {
         this.state.exercise_details.push({"account_id": localStorage.getItem("accountId"), "exercise_type": this.state.exercise_name, "weight": this.state.weight, "reps": this.state.reps})
         this.setState({numItems: this.state.numItems + 1})
         this.setState({exercise_name: null, weight: null, reps: null})}
-        else {toaster.notify('Please complete each card before adding another')
+        else {toaster.danger('Please complete each card before adding another')
         }
     }
 
@@ -79,7 +79,7 @@ class LogWorkoutPage extends react.Component {
 
         // send rquest with JSON payload
         xhr.send(JSON.stringify(json));
-        toaster.notify('Workout Submitted')
+        toaster.success('Workout Submitted')
     }
 
 
