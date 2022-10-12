@@ -58,7 +58,7 @@ class UserProfile extends react.Component {
         xhr.send(null);
     }
     render() {
-        if (this.state.workout_length_object > 0) {
+        if (this.state.workout_length_object) {
             var a = <Moment format="MM/DD/YY">{this.state.workout_length_object["TIMESTAMP"] * 1000}</Moment>}
             else {
                 var a = "No workouts yet"
