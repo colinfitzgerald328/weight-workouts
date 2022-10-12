@@ -22,7 +22,7 @@ class TypeCards extends react.Component {
                             Length
                         </div>
                         <div className={styles.actualLength}>
-                            {this.props.length}
+                            {this.props.length} minutes
                         </div>
                      </div>
                 </div>

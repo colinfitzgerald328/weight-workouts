@@ -21,12 +21,9 @@ class WorkoutBar extends react.Component {
                 </div>
                 <div className={styles.flexContainer}>
                         <div className={styles.weightLbs}>
-                            Focus: Legs 
-                        </div>
-                        <div className={styles.weightLbs}>
                             Sets: {this.props.sets}
                         </div>
-                        <div className={styles.weightLbs}>
+                        <div className={styles.weightLbs1}>
                             Total Reps: {this.props.total_reps}
                         </div>
                     </div>
