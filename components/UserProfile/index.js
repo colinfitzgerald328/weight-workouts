@@ -62,7 +62,6 @@ class UserProfile extends react.Component {
         return(
             <div className={styles.container}>
                     <div className={styles.leftImage}>
-                        <img className={styles.profileimage} src={"https://d195hqvwre713v.cloudfront.net/images/2021/8/30/_final_Colin_Fitzgerald_Cal_CC_20210824_131731_Sergio_Estrada.jpg?width=300"}/>
                         <div className={styles.itemContainer}>
                         <div className={styles.item}>
                             {this.state.profile.name} 
