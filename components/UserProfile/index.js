@@ -70,10 +70,10 @@ class UserProfile extends react.Component {
                     <div className={styles.leftImage}>
                         <div className={styles.itemContainer}>
                         <div className={styles.item}>
-                            {this.state.profile.name} 
+                            Name: {this.state.profile.name} 
                         </div>
                         <div className={styles.item}>
-                            {this.state.profile.city}   
+                            City: {this.state.profile.city}   
                         </div>
                         <div className={styles.item}>
                             Last Workout Date: {a}
