@@ -1,3 +1,4 @@
+import { ThreeSixty } from "@mui/icons-material";
 import react from "react";
 import Moment from "react-moment";
 import styles from "./styles.module.css"
@@ -5,7 +6,7 @@ import styles from "./styles.module.css"
 class UserProfile extends react.Component {
     constructor(props) {
         super(props)
-        this.state={profile: [], workout_length_object: {}, workout_history: []}
+        this.state={profile: "", workout_length_object: "", workout_history: ""}
     }
 
     componentDidMount() {
@@ -20,7 +21,11 @@ class UserProfile extends react.Component {
         xhr.onreadystatechange = function() { 
             if (xhr.readyState == 4 && xhr.status == 200) {
                 var data = JSON.parse(xhr.responseText)
-                self.setState({profile: data["user_profile"][0]})
+                if (data["operation"] == "error") {
+                    self.setState({profile: null})
+                } else {
+                    self.setState({profile: data["user_profile"][0]})
+                }
             }
         }
 
@@ -38,7 +43,11 @@ class UserProfile extends react.Component {
         xhr.onreadystatechange = function() { 
             if (xhr.readyState == 4 && xhr.status == 200) {
                 var data = JSON.parse(xhr.responseText)
-                self.setState({workout_history: data["feed"], workout_length_object: data["feed"][0]})
+                if (data["operation"] == "error") {
+                    self.setState({workout_history: null, workout_length_object: null})
+                } else {
+                    self.setState({workout_history: data["feed"], workout_length_object: data["feed"][0]})
+                }
             }
         }
 
@@ -49,8 +58,7 @@ class UserProfile extends react.Component {
         xhr.send(null);
     }
     render() {
-        var a = this.state.workout_length_object["TIMESTAMP"]
-        if (this.state.profile.length = 1) {
+        if (this.state.profile !=null && this.state.workout_history !=null && this.state.workout_length_object !=null) {
         return(
             <div className={styles.container}>
                     <div className={styles.leftImage}>
@@ -73,7 +81,9 @@ class UserProfile extends react.Component {
 
             </div>
         )} else {
-            return(<div>Use the buttons to create a profile</div>)
+            return(<div>
+                Use the button above to create your profile
+            </div>)
         }
     }
 }
