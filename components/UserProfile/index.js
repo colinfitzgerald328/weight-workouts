@@ -22,7 +22,7 @@ class UserProfile extends react.Component {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 var data = JSON.parse(xhr.responseText)
                 if (data["operation"] == "error") {
-                    self.setState({profile: null})
+                    self.setState({profile: "no profile yet"})
                 } else {
                     self.setState({profile: data["user_profile"][0]})
                 }
@@ -44,7 +44,7 @@ class UserProfile extends react.Component {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 var data = JSON.parse(xhr.responseText)
                 if (data["operation"] == "error") {
-                    self.setState({workout_history: null, workout_length_object: null})
+                    self.setState({workout_length_object: 0})
                 } else {
                     self.setState({workout_history: data["feed"], workout_length_object: data["feed"][0]})
                 }
@@ -58,7 +58,13 @@ class UserProfile extends react.Component {
         xhr.send(null);
     }
     render() {
-        if (this.state.profile !=null && this.state.workout_history !=null && this.state.workout_length_object !=null) {
+        if (this.state.workout_length_object > 0) {
+            var a = <Moment format="MM/DD/YY">{this.state.workout_length_object["TIMESTAMP"] * 1000}</Moment>}
+            else {
+                var a = "No workouts yet"
+            }
+        
+        
         return(
             <div className={styles.container}>
                     <div className={styles.leftImage}>
@@ -70,7 +76,7 @@ class UserProfile extends react.Component {
                             {this.state.profile.city}   
                         </div>
                         <div className={styles.item}>
-                            Last Workout Date: <Moment format="MM/DD/YY">{this.state.workout_length_object["TIMESTAMP"] * 1000}</Moment>
+                            Last Workout Date: {a}
                         </div>
                         <div className={styles.item}>
                             Total Workouts This Year: {this.state.workout_history.length}
@@ -79,11 +85,7 @@ class UserProfile extends react.Component {
                     </div>
 
             </div>
-        )} else {
-            return(<div>
-                Use the button above to create your profile
-            </div>)
-        }
+        )
     }
 }
 
