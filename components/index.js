@@ -6,6 +6,7 @@ import WorkoutCards from "./WorkoutCards";
 import styles from "./styles.module.css";
 import NewUserPopup from "./NewUserPopup";
 import MenuPage from "../pages/menu";
+import { toaster } from "evergreen-ui";
 
 
 class Root extends react.Component {
@@ -57,7 +58,7 @@ class Root extends react.Component {
                 if (data["operation"] == 'success') {
                     localStorage.setItem('accountId', data["account_info"][0]["account_id"])
                 } else {
-                    console.log("error")
+                    toaster.danger("Wrong password. Please try again!")
                 }
             }
         }   

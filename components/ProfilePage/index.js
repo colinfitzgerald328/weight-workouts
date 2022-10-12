@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import UserProfile from "../UserProfile";
 import react from "react";
 import styles from "./styles.module.css"
 
@@ -12,16 +13,15 @@ class ProfilePage extends react.Component {
     render() {
         return(
             <div className={styles.container}>
-                <div className={styles.left}>
-                    <div className={styles.textContainer}>
-                        <div className={styles.title}>
-                            Type
+                    <div className={styles.flexContainer}>
+                        <div className={styles.plus} onClick={this.addDetailsPopup}>
+                            Add details
                         </div>
-                        <div className={styles.actualType}>
-                        Legs
-                        </div>
+                        <div className={styles.minus} onClick={this.EditDetails}>
+                            Update details
                         </div>
                     </div>
+                    <UserProfile/>
             </div>
         )
     }
