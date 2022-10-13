@@ -10,24 +10,23 @@
 
 .left {
     width: 48%;
-    height: 110px;
-    min-height: fit-content;
+    height: 140px;
     display: flex;
     margin-right: auto;
     background-color: #374464;
     box-shadow: 0 13px 26px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.16);
     border-radius: 10px;
-    align-items: space-between;
+    align-items: center;
 }
 
 .right {
     width: 48%;
-    height: 110px;
-    min-height: fit-content;
+    height: 140px;
     display: flex;
     background-color: #374464;
     box-shadow: 0 13px 26px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.16);
     border-radius: 10px;
+    align-items: center;
 }
 
 .textContainer {
