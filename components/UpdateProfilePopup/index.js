@@ -45,6 +45,7 @@ class UpdateProfilePopup extends React.Component {
             "account_id": localStorage.getItem("accountId"), 
             "name": this.state.username,
             "city": this.state.password, 
+            "image_url": this.state.image
         };
 
         // open request
@@ -60,7 +61,7 @@ class UpdateProfilePopup extends React.Component {
     }
 
     render() {
-        console.log(this.state)
+        console.log(this.state.image)
         return(
             <div className={styles.formContainer}>
                 <div className={styles.form}>

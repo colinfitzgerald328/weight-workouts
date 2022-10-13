@@ -74,8 +74,8 @@
     flex-direction: column;
     color: white;
     background-color: #374464;
-    justify-content: space-around;
     border-radius: 10px;
+    padding-bottom: 20px;
 }
 
 .special {
