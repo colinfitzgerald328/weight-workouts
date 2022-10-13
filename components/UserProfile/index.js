@@ -64,11 +64,12 @@ class UserProfile extends react.Component {
                 var a = "No workouts yet"
             }
         
-        
         return(
             <div className={styles.container}>
                     <div className={styles.leftImage}>
-                        <div className={styles.itemContainer}>
+                        <img className={styles.special} src={this.state.profile.image_url}/>
+                    </div>
+                    <div className={styles.itemContainer}>
                         <div className={styles.item}>
                             Name: {this.state.profile.name} 
                         </div>
@@ -83,8 +84,6 @@ class UserProfile extends react.Component {
                         </div>
                         </div>
                     </div>
-
-            </div>
         )
     }
 }

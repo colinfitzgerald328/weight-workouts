@@ -5,7 +5,7 @@ import { toaster } from "evergreen-ui";
 class UpdateProfilePopup extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {username: '', password: ''}
+        this.state = {username: '', password: '', image: null}
         this.getUsername = this.getUsername.bind(this);
         this.getPassword = this.getPassword.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,6 +18,15 @@ class UpdateProfilePopup extends React.Component {
     getPassword(event) {
         this.setState({password: event.target.value});
     }
+
+    onImageChange = event => {
+        if (event.target.files && event.target.files[0]) {
+          let img = event.target.files[0];
+          this.setState({
+            image: URL.createObjectURL(img)
+          });
+        }
+      };
 
     handleSubmit() {
         console.log(this.state)
@@ -51,6 +60,7 @@ class UpdateProfilePopup extends React.Component {
     }
 
     render() {
+        console.log(this.state)
         return(
             <div className={styles.formContainer}>
                 <div className={styles.form}>
@@ -76,6 +86,14 @@ class UpdateProfilePopup extends React.Component {
                         <div className={styles.accountId}>
                             City
                         <input className={styles.test1} type="text" name="name" password={this.state.value} onChange={this.getPassword}/>
+                        </div> 
+                        </div>
+                    </div>
+                    <div className={styles.basicWrapper}>
+                    <div className={styles.container}>
+                        <div className={styles.accountId}>
+                            Profile Image
+                        <input className={styles.test44} type="file" name="name" password={this.state.value} onChange={this.onImageChange}/>
                         </div> 
                         </div>
                     </div>

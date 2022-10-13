@@ -1,5 +1,6 @@
 .container {
     display: flex;
+    flex-direction: column;
     width: 100%;
     margin-top: 20px;
 }
@@ -59,7 +60,6 @@
     background-color: #617097;
     border-radius: 10px;
     width: 100%;
-    height: 50vh;
     margin-left: auto;
 }
 
@@ -76,4 +76,15 @@
     background-color: #374464;
     justify-content: space-around;
     border-radius: 10px;
+}
+
+.special {
+    display: flex;
+    background-color: aqua;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.scaled {
+    width: 50px;
 }
