@@ -2,13 +2,15 @@ import React from "react"
 import styles from './styles.module.css'
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { toaster } from "evergreen-ui";
+import { SettingsRemoteOutlined } from "@mui/icons-material";
 class UpdateProfilePopup extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {username: '', password: '', image: null}
+        this.state = {username: '', password: '', image: null, url: ''}
         this.getUsername = this.getUsername.bind(this);
         this.getPassword = this.getPassword.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.uploadImage = this.uploadImage.bind(this);
     }
 
     getUsername(event) {
@@ -23,13 +25,27 @@ class UpdateProfilePopup extends React.Component {
         if (event.target.files && event.target.files[0]) {
           let img = event.target.files[0];
           this.setState({
-            image: URL.createObjectURL(img)
+            image: img
           });
         }
       };
 
+    uploadImage() {
+        const data = new FormData() 
+        data.append("file", this.state.image)
+        data.append("upload_preset", "kvc17geu")
+        data.append("cloud_name", "dbq7j2qmy")
+        fetch("https://api.cloudinary.com/v1_1/dbq7j2qmy/image/upload", {
+            method: "post",
+            body: data})
+        .then(resp => resp.json())
+        .then(data => {
+            this.setState({url: data.url})
+        })
+        .catch(err => console.log(err))
+    }
+
     handleSubmit() {
-        console.log(this.state)
         // listen for `load` event
         var xhr = new XMLHttpRequest();
         var self = this
@@ -45,7 +61,7 @@ class UpdateProfilePopup extends React.Component {
             "account_id": localStorage.getItem("accountId"), 
             "name": this.state.username,
             "city": this.state.password, 
-            "image_url": this.state.image
+            "image_url": String(this.state.url)
         };
 
         // open request
@@ -61,7 +77,7 @@ class UpdateProfilePopup extends React.Component {
     }
 
     render() {
-        console.log(this.state.image)
+        console.log(this.state.url)
         return(
             <div className={styles.formContainer}>
                 <div className={styles.form}>
@@ -97,6 +113,11 @@ class UpdateProfilePopup extends React.Component {
                         <input className={styles.test44} type="file" name="name" password={this.state.value} onChange={this.onImageChange}/>
                         </div> 
                         </div>
+                    </div>
+                    <div className={styles.basicWrapper}>
+                    <div onClick={() => this.uploadImage()} className={styles.uploadImage}>
+                            Click to Confirm Upload
+                        </div> 
                     </div>
                     <div onClick={() => this.handleSubmit()} className={styles.submit}>
                         CONFIRM

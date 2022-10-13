@@ -1,6 +1,7 @@
 import { ThreeSixty } from "@mui/icons-material";
 import react from "react";
 import Moment from "react-moment";
+import { CloudinaryContext } from "cloudinary-react";
 import styles from "./styles.module.css"
 
 class UserProfile extends react.Component {
