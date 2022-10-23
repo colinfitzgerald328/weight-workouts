@@ -121,14 +121,16 @@ class LogWorkoutPage extends react.Component {
                     <meta></meta>
                 </Head>
                 <CustomMenuBar/>
-                <input type="text" className={styles.select} placeholder="length (minutes)" value={this.state.value} onChange={this.getLength}/>
-                <input type="text" className={styles.select} placeholder="type of workout" value={this.state.value} onChange={this.getType}/>
+                <div className={styles.topFlex}>
+                    <input type="text" className={styles.select} placeholder="length (m)" value={this.state.value} onChange={this.getLength}/>
+                    <input type="text" className={styles.select} placeholder="type" value={this.state.value} onChange={this.getType}/>
+                </div>
                 <div className={styles.flexContainer}>
                     <div className={styles.plus} onClick={this.increase}>
-                        Add
+                        +
                     </div>
                     <div className={styles.minus} onClick={this.decrease}>
-                        Remove
+                        -
                     </div>
                 </div>
                 <div className={styles.scroller}>

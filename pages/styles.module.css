@@ -2,7 +2,9 @@
 
 .basic {
     font-family: 'Inter Tight', sans-serif;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .flexContainer {
@@ -17,7 +19,7 @@
     width: 30%;
     justify-content: center;
     height: fit-content;
-    background-color: rgb(127, 203, 127);
+    background: linear-gradient(#82FB69, #18D41B);
     border-radius: 10px;
     margin-right: auto;
     margin-left: 10px;
@@ -36,7 +38,7 @@
     justify-content: center;
     height: fit-content;
     font-size: 1.5rem;
-    background-color: rgb(162, 69, 69);
+    background: linear-gradient(#FF5631, #FF3B2F);
     border-radius: 10px;
     margin-right: 10px;
     margin-top: 10px;
@@ -66,6 +68,7 @@
     padding-bottom: 20px;
     margin-top: 10px;
     color: black;
+    background-color: rgb(32, 103, 174);
 }
 
 .container {
@@ -78,6 +81,7 @@
     border-radius: 10px;
     height: fit-content;
     color: black;
+    background-color: white;
 }
 
 .textContainer {
@@ -89,7 +93,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 10px;
-    color: black;
+    color: white;
 }
 
 .title {
@@ -97,18 +101,23 @@
     margin-right: auto; 
     margin-left: 20px;
     padding: 10px;
-    color: black;
     font-size: 1.2rem;
-    font-weight: 900;
+    font-weight: normal;
     background-color: #374464;
     border: 1px solid #374464;
     border-radius: 10px;
+    color: white;
+}
+
+.title::placeholder {
+    color: white;
 }
 
 .title1 {
     margin-right: 20px;
     color: rgb(167, 222, 190); 
     font-size: 1.2rem;
+    color: white;
 }
 
 .flexContainer1 {
@@ -118,7 +127,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    color: white;
+    color: black;
     font-weight: bold;
 }
 
@@ -136,6 +145,11 @@
     font-size: 16px;
     color: white; 
     padding: 10px;
+    color: white;
+}
+
+.weightLbs::placeholder {
+    color: white;
 }
 
 .weightLbs1 {
@@ -143,12 +157,14 @@
     margin-bottom: 20px;
     font-size: 16px;
     color: white;
+    color: #a1302a;
 }
 
 .weightLbs2 {
     margin-right: 20px;
     color: white;
     margin-top: 20px;
+    color: #a1302a;
 }
 
 .submit {
@@ -174,9 +190,9 @@
     display: flex;
     flex-direction: column;
     overflow: scroll;
-    height: 55vh;
+    height: 47vh;
     width: 100%;
-    background-color: #13151a;
+    background-color:  rgb(32, 103, 174);
     border-radius: 10px;
 }
 
@@ -186,14 +202,28 @@
     margin-top: 20px;
     margin-left: 20px;
     display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid dodgerblue;
+    border-radius: 10px;
     box-sizing: border-box;
+    font-size: 16px;
+    background-color: dodgerblue;
   }
 
-  .noWorkouts {
+  .select::placeholder {
+    color: white;
+  }
+
+.noWorkouts {
     margin-top: 20px;
     font-size: 2rem;
     display: flex;
     justify-content: center;
-  }
+}
+
+.topFlex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
