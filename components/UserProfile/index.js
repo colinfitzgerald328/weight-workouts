@@ -72,16 +72,28 @@ class UserProfile extends react.Component {
                     </div>
                     <div className={styles.itemContainer}>
                         <div className={styles.item}>
-                            Name: {this.state.profile.name} 
+                            Name
+                        </div>
+                        <div className={styles.actualItem}>
+                            {this.state.profile.name}
                         </div>
                         <div className={styles.item}>
-                            City: {this.state.profile.city}   
+                            City 
+                        </div>
+                        <div className={styles.actualItem}>
+                            {this.state.profile.city}  
                         </div>
                         <div className={styles.item}>
-                            Last Workout Date: {a}
+                            Last Workout Date
+                        </div>
+                        <div className={styles.actualItem}>
+                            {a}
                         </div>
                         <div className={styles.item}>
-                            Total Workouts This Year: {this.state.workout_history.length}
+                            Total Workouts This Year
+                        </div>
+                        <div className={styles.actualItem}>
+                            {this.state.workout_history.length}
                         </div>
                         </div>
                     </div>

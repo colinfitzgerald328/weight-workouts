@@ -64,8 +64,9 @@
 }
 
 .item {
-    margin-top: 20px;
+    margin-top: 15px;
     margin-left: 20px;
+    font-weight: bold;
 }
 
 .itemContainer {
@@ -87,4 +88,9 @@
 
 .scaled {
     width: 50px;
+}
+
+.actualItem {
+    margin-left: 25px;
+    margin-top: 5px;
 }
