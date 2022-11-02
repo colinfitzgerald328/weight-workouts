@@ -23,8 +23,4 @@ Here are some screenshots:
 
 <img src="https://user-images.githubusercontent.com/64982557/194742427-0e7783ea-fb5a-4a9b-830a-dbe5585d42a6.jpeg" width="330" height="700">
 
-Fair warning, I accidentally nuked the backend so you cannot currently use this app. I'll reconfigure the backend database soon, but for the time being feel free to browse the code. 
-
-Thanks for your patience!
-
 [Current deployment link](https://weight-workouts.vercel.app)
