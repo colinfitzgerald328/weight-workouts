@@ -70,7 +70,7 @@ class Root extends react.Component {
         };
 
         // open request
-        xhr.open('POST', 'https://weight-workouts.uc.r.appspot.com/login');
+        xhr.open('POST', 'https://winter-cogency-367402.uc.r.appspot.com/login');
 
         // set `Content-Type` header
         xhr.setRequestHeader('Content-Type', 'application/json');

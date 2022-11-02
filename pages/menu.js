@@ -28,7 +28,7 @@ class MenuPage extends react.Component {
         }
 
 
-        const theUrl = "https://weight-workouts.uc.r.appspot.com/getFeed?account_id=" + localStorage.getItem("accountId")
+        const theUrl = "https://winter-cogency-367402.uc.r.appspot.com/getFeed?account_id=" + localStorage.getItem("accountId")
 
         xhr.open("GET", theUrl, true); // true for asynchronous 
         xhr.send(null);

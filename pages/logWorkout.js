@@ -85,7 +85,7 @@ class LogWorkoutPage extends react.Component {
 
         // open request
 
-        xhr.open('POST', 'https://weight-workouts.uc.r.appspot.com/logWorkout');
+        xhr.open('POST', 'https://winter-cogency-367402.uc.r.appspot.com/logWorkout');
 
         // set `Content-Type` header
         xhr.setRequestHeader('Content-Type', 'application/json');

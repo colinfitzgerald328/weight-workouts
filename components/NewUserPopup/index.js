@@ -37,7 +37,7 @@ class AddConsultantPopup extends React.Component {
         };
 
         // open request
-        xhr.open('POST', 'https://weight-workouts.uc.r.appspot.com/addUser');
+        xhr.open('POST', 'https://winter-cogency-367402.uc.r.appspot.com/addUser');
 
         // set `Content-Type` header
         xhr.setRequestHeader('Content-Type', 'application/json');
