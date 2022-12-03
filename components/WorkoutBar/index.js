@@ -1,5 +1,5 @@
 import {Collapse, Text, Button} from "@nextui-org/react";
-import {Link, BrowserRouter} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import styles from "./styles.module.css"
 import Moment from "react-moment";
 
