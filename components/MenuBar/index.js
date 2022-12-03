@@ -33,7 +33,7 @@ class MenuBar extends react.Component {
             <div>
                 <div onClick={() => console.log(this.props)} className={styles.basic}>
                     <div className={styles.text}>
-                        Home
+                        Workout Home
                     </div>
                     <div onClick={() => this.showPopUp()} className={styles.icon}>
                         <MenuIcon/>

@@ -1,9 +1,9 @@
 import Head from "next/head";
-import Link from "next/link";
 import react from "react";
 import MenuBar from "../components/MenuBar";
 import WorkoutBar from "../components/WorkoutBar";
 import styles from "./styles.module.css"
+import {BrowserRouter} from "react-router-dom";
 
 
 class MenuPage extends react.Component {
@@ -57,7 +57,9 @@ class MenuPage extends react.Component {
                               rel="stylesheet"></link>
                     </Head>
                     <MenuBar account_id={this.props.account_id} onLogOut={this.props.onLogOut}/>
-                    {workoutBarDivs}
+                    <BrowserRouter>
+                        {workoutBarDivs}
+                    </BrowserRouter>
                 </div>
             )
         } else {
