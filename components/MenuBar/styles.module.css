@@ -24,3 +24,7 @@
 .icon:hover {
     color: aliceblue;
 }
+
+.rightAlign {
+    margin-left: auto;
+}

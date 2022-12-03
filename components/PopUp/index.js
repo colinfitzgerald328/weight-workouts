@@ -1,42 +1,35 @@
-import react from "react";
+import {Popover, Menu, Position, Button} from "evergreen-ui";
 import Link from "next/link";
-import MenuIcon from '@mui/icons-material/Menu';
-import styles from "./styles.module.css"
 
-class MainMenuPopup extends react.Component {
-    constructor(props) {
-        super(props)
-    }
-
-    logOut() {
-        window.localStorage.clear();
-        console.log(localStorage)
-    }
-
-
-    render() {
-        return (
-            <div className={styles.basic}>
-                <Link href={{
-                    pathname: '/logWorkout',
-                }}>
-                    <div className={styles.action1}>
-                        Log Workout
-                    </div>
-                </Link>
-                <Link href={{
-                    pathname: '/profile',
-                }}>
-                    <div className={styles.action2}>
-                        Profile
-                    </div>
-                </Link>
-                <div onClick={() => this.props.onLogOut()} className={styles.action3}>
-                    Log Out
-                </div>
-            </div>
-        )
-    }
+export default function MainMenuPopup(props) {
+    return (
+        <Popover
+            position={Position.BOTTOM_LEFT}
+            content={
+                <Menu>
+                    <Menu.Group marginRight={20}>
+                        <Link href={{
+                            pathname: '/logWorkout',
+                        }}>
+                            <Menu.Item>Log Workout</Menu.Item>
+                        </Link>
+                        <Link href={{
+                            pathname: '/profile',
+                        }}>
+                            <Menu.Item>Profile</Menu.Item>
+                        </Link>
+                        <Menu.Item onSelect={() => props.onLogOut()} secondaryText="⌘R">
+                            Log Out
+                        </Menu.Item>
+                    </Menu.Group>
+                </Menu>
+            }
+        >
+            <Button marginRight={20}>Menu</Button>
+        </Popover>
+    );
 }
 
-export default MainMenuPopup
+
+
+
