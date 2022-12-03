@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.10.4",
     "@mui/icons-material": "^5.10.6",
     "@mui/material": "^5.10.7",
+    "@nextui-org/react": "^1.0.0-beta.10",
     "cloudinary-react": "^1.8.1",
     "evergreen-ui": "^6.10.4",
     "firebase": "^9.10.0",
