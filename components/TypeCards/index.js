@@ -3,8 +3,7 @@ import styles from "./styles.module.css"
 
 class TypeCards extends react.Component {
     render() {
-        constructor
-        return(
+        return (
             <div className={styles.container}>
                 <div className={styles.left}>
                     <div className={styles.textContainer}>
@@ -12,10 +11,10 @@ class TypeCards extends react.Component {
                             Type
                         </div>
                         <div className={styles.actualType}>
-                        {this.props.type}
-                        </div>
+                            {this.props.type}
                         </div>
                     </div>
+                </div>
                 <div className={styles.right}>
                     <div className={styles.textContainer}>
                         <div className={styles.title}>
@@ -24,7 +23,7 @@ class TypeCards extends react.Component {
                         <div className={styles.actualLength}>
                             {this.props.length} minutes
                         </div>
-                     </div>
+                    </div>
                 </div>
             </div>
         )

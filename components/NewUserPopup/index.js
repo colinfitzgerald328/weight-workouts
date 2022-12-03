@@ -1,6 +1,7 @@
 import React from "react"
 import styles from './styles.module.css'
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+
 class AddConsultantPopup extends React.Component {
     constructor(props) {
         super(props)
@@ -21,19 +22,19 @@ class AddConsultantPopup extends React.Component {
     handleSubmit() {
         console.log(this.state)
         // listen for `load` event
-        var xhr = new XMLHttpRequest();
-        var self = this
-        xhr.onreadystatechange = function() { 
+        const xhr = new XMLHttpRequest();
+        const self = this;
+        xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
-                var data = JSON.parse(xhr.responseText)
+                const data = JSON.parse(xhr.responseText);
                 self.setState({data: data})
             }
-        }   
+        }
 
         // create a JSON object
         const json = {
             "username": this.state.username,
-            "password": this.state.password, 
+            "password": this.state.password,
         };
 
         // open request
@@ -42,38 +43,40 @@ class AddConsultantPopup extends React.Component {
         // set `Content-Type` header
         xhr.setRequestHeader('Content-Type', 'application/json');
 
-        // send rquest with JSON payload
+        // send request with JSON payload
         xhr.send(JSON.stringify(json));
         this.props.onDismiss()
     }
 
     render() {
-        return(
+        return (
             <div className={styles.formContainer}>
                 <div className={styles.form}>
                     <div className={styles.topWrapper}>
-                    <div className={styles.addNewConsultant}>
-                        Create new account
-                    </div>
-                    <div onClick={() => this.props.onDismiss()} className={styles.dismiss}>
-                        <CloseRoundedIcon/>
-                    </div>
+                        <div className={styles.addNewConsultant}>
+                            Create new account
+                        </div>
+                        <div onClick={() => this.props.onDismiss()} className={styles.dismiss}>
+                            <CloseRoundedIcon/>
+                        </div>
                     </div>
                     <span className={styles.divider}></span>
                     <div className={styles.basicWrapper}>
                         <div className={styles.container}>
-                        <div className={styles.accountId}>
-                            Username
-                        <input className={styles.test1} type="text" name="name" username={this.state.value} onChange={this.getUsername}/>
-                        </div> 
+                            <div className={styles.accountId}>
+                                Username
+                                <input className={styles.test1} type="text" name="name" username={this.state.value}
+                                       onChange={this.getUsername}/>
+                            </div>
                         </div>
                     </div>
                     <div className={styles.basicWrapper}>
                         <div className={styles.container}>
-                        <div className={styles.accountId}>
-                            Password
-                        <input className={styles.test1} type="text" name="name" password={this.state.value} onChange={this.getPassword}/>
-                        </div> 
+                            <div className={styles.accountId}>
+                                Password
+                                <input className={styles.test1} type="text" name="name" password={this.state.value}
+                                       onChange={this.getPassword}/>
+                            </div>
                         </div>
                     </div>
                     <div onClick={() => this.handleSubmit()} className={styles.submit}>

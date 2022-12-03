@@ -9,7 +9,7 @@ import styles from "./styles.module.css"
 class MenuPage extends react.Component {
     constructor(props) {
         super(props)
-        this.state={data: []}
+        this.state = {data: []}
     }
 
     componentDidMount() {
@@ -18,11 +18,11 @@ class MenuPage extends react.Component {
 
     getFeed() {
 
-        var xhr = new XMLHttpRequest();
-        var self = this
-        xhr.onreadystatechange = function() { 
+        const xhr = new XMLHttpRequest();
+        const self = this;
+        xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
-                var data = JSON.parse(xhr.responseText)
+                const data = JSON.parse(xhr.responseText);
                 self.setState({data: data["feed"]})
             }
         }
@@ -36,35 +36,39 @@ class MenuPage extends react.Component {
 
     render() {
         if (this.state.data != null) {
-        var workoutBarDivs = this.state.data.map (data => {
-            var timestamp = data["TIMESTAMP"]
-            var sets = data["sets"]
-            var total_reps = data["total_reps"]
-            return(
-                <div key={timestamp}>
-                    <WorkoutBar timestamp={timestamp} sets={sets} total_reps={total_reps}/>
+            const workoutBarDivs = this.state.data.map(data => {
+                const timestamp = data["TIMESTAMP"];
+                const sets = data["sets"];
+                const total_reps = data["total_reps"];
+                return (
+                    <div key={timestamp}>
+                        <WorkoutBar timestamp={timestamp} sets={sets} total_reps={total_reps}/>
+                    </div>
+                )
+            });
+            return (
+                <div className={styles.basic}>
+                    <Head>
+                        <title>Weight Workouts - by Colin FitzGerald</title>
+                        <meta></meta>
+                        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+                        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+                        <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap"
+                              rel="stylesheet"></link>
+                    </Head>
+                    <MenuBar account_id={this.props.account_id} onLogOut={this.props.onLogOut}/>
+                    {workoutBarDivs}
                 </div>
-            )});
-        return(
-            <div className={styles.basic}>
+            )
+        } else {
+            return (<div className={styles.basic}>
                 <Head>
                     <title>Weight Workouts - by Colin FitzGerald</title>
                     <meta></meta>
                     <link rel="preconnect" href="https://fonts.googleapis.com"/>
                     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-                    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap" rel="stylesheet"></link>
-                </Head>
-                <MenuBar account_id={this.props.account_id} onLogOut={this.props.onLogOut}/>
-                {workoutBarDivs}
-            </div>
-        )} else {
-            return (            <div className={styles.basic}>
-                <Head>
-                    <title>Weight Workouts - by Colin FitzGerald</title>
-                    <meta></meta>
-                    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-                    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap" rel="stylesheet"></link>
+                    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap"
+                          rel="stylesheet"></link>
                 </Head>
                 <MenuBar account_id={this.props.account_id} onLogOut={this.props.onLogOut}/>
                 <div className={styles.noWorkouts}>

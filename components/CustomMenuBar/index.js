@@ -7,39 +7,41 @@ import styles from "./styles.module.css"
 class CustomMenuBar extends react.Component {
     constructor(props) {
         super(props)
-        this.state={"showPopUp": false, numClicks: 0}
+        this.state = {"showPopUp": false, numClicks: 0}
     }
 
-    showPopUp(){
+    showPopUp() {
         if (this.state.numClicks == 0) {
             this.setState({"showPopUp": true})
-            this.state.numClicks += 1 
+            this.state.numClicks += 1
             console.log(this.state.numClicks)
         } else {
             this.setState({"showPopUp": false})
-            this.state.numClicks -= 1 
+            this.state.numClicks -= 1
             console.log(this.state.numClicks)
         }
     }
+
     render() {
-      if (this.state.numClicks == 1) {
-        var popUp = <LogWorkoutPopup data={this.props.data} onLogOut={this.props.onLogOut}/>
-    } else {
-        var popUp = (<div></div>)
-    }
-      return(
-          <div>
-          <div onClick={()=> console.log(this.props)} className={styles.basic}>
-              <div className={styles.text}>
-                  Log Workout
-              </div>
-              <div data={this.props.data} onClick={()=> this.showPopUp()} className={styles.icon}>
-                  <MenuIcon/>
-              </div>
-          </div>
-                          {popUp}
-                          </div>
-          )
+        let popUp;
+        if (this.state.numClicks == 1) {
+            popUp = <LogWorkoutPopup onLogOut={this.props.onLogOut}/>;
+        } else {
+            popUp = (<div></div>);
+        }
+        return (
+            <div>
+                <div onClick={() => console.log(this.props)} className={styles.basic}>
+                    <div className={styles.text}>
+                        Log Workout
+                    </div>
+                    <div onClick={() => this.showPopUp()} className={styles.icon}>
+                        <MenuIcon/>
+                    </div>
+                </div>
+                {popUp}
+            </div>
+        )
     }
 }
 

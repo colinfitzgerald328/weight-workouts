@@ -9,7 +9,7 @@ import styles from "./styles.module.css"
 class WorkoutPage extends react.Component {
     constructor(props) {
         super(props)
-        this.state={data: [], stats: []}
+        this.state = {data: [], stats: []}
     }
 
     componentDidMount() {
@@ -20,11 +20,11 @@ class WorkoutPage extends react.Component {
 
     getWorkoutDetails() {
 
-        var xhr = new XMLHttpRequest();
-        var self = this
-        xhr.onreadystatechange = function() { 
+        const xhr = new XMLHttpRequest();
+        const self = this;
+        xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
-                var data = JSON.parse(xhr.responseText)
+                const data = JSON.parse(xhr.responseText);
                 self.setState({data: data["workout_details"]})
             }
         }
@@ -38,11 +38,11 @@ class WorkoutPage extends react.Component {
 
     getWorkoutStats() {
 
-        var xhr = new XMLHttpRequest();
-        var self = this
-        xhr.onreadystatechange = function() { 
+        const xhr = new XMLHttpRequest();
+        const self = this;
+        xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
-                var data = JSON.parse(xhr.responseText)
+                const data = JSON.parse(xhr.responseText);
                 self.setState({stats: data["workout_stats"][0]})
             }
         }
@@ -55,23 +55,25 @@ class WorkoutPage extends react.Component {
     }
 
     render() {
-        var workoutCardDivs = this.state.data.map (data => {
-            var timestamp = data["TIMESTAMP"]
-            var exercise_type = data["exercise_type"]
-            var reps = data["reps"]
-            var weight = data["weight"]
+        const workoutCardDivs = this.state.data.map(data => {
+            const timestamp = data["TIMESTAMP"];
+            const exercise_type = data["exercise_type"];
+            const reps = data["reps"];
+            const weight = data["weight"];
 
-            return(
+            return (
                 <div key={timestamp}>
                     <WorkoutCards timestamp={timestamp} exercise_type={exercise_type} reps={reps} weight={weight}/>
                 </div>
-            )});
-        return(
+            )
+        });
+        return (
             <div className={styles.basic}>
                 <Head>
                     <title>Weight Workouts - by Colin FitzGerald</title>
                     <meta></meta>
-                    <link rel="icon" href="https://colinfitzgerald328.github.io/assets/images/FitzGerald-Colin-Homework%206-01.jpg"/>
+                    <link rel="icon"
+                          href="https://colinfitzgerald328.github.io/assets/images/FitzGerald-Colin-Homework%206-01.jpg"/>
                 </Head>
                 <WorkoutMenuBar/>
                 <TypeCards type={this.state.stats.exercise_type} length={this.state.stats.length}/>
@@ -84,9 +86,9 @@ class WorkoutPage extends react.Component {
 export default WorkoutPage
 
 export async function getServerSideProps(context) {
-    
-    var timestamp = context.query.timestamp ?? null
-    var props = {timestamp: timestamp}
+
+    const timestamp = context.query.timestamp ?? null;
+    const props = {timestamp: timestamp};
     return {
         props: props
     }

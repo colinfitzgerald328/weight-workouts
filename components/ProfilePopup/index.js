@@ -16,21 +16,22 @@ class ProfilePopup extends react.Component {
 
     render() {
         console.log(window.localStorage)
-        return(
+        return (
             <div className={styles.basic}>
                 <Link href={{
-      pathname: '/', query: this.props.data
-    }}>
-                <div className={styles.action}>
-                    Main
+                    pathname: '/', query: this.props.data
+                }}>
+                    <div className={styles.action}>
+                        Main
                     </div>
                 </Link>
                 <Link href={{
-      pathname: '/logWorkout', 
-      query: this.props.data}}>
-                <div className={styles.action2}>
-                    Log Workout
-                </div>
+                    pathname: '/logWorkout',
+                    query: this.props.data
+                }}>
+                    <div className={styles.action2}>
+                        Log Workout
+                    </div>
                 </Link>
             </div>
         )

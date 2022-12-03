@@ -9,8 +9,8 @@ import styles from "./styles.module.css"
 class ProfilePage extends react.Component {
     constructor(props) {
         super(props)
-        this.state={showPopup: false}
-        
+        this.state = {showPopup: false}
+
     }
 
     showPopup() {
@@ -22,20 +22,21 @@ class ProfilePage extends react.Component {
     }
 
     render() {
+        let popup;
         if (this.state.showPopup == true) {
-            var popup = <UpdateProfilePopup onDismiss={this.hidePopup.bind(this)}/>
+            popup = <UpdateProfilePopup onDismiss={this.hidePopup.bind(this)}/>;
         } else {
-            var popup = <div></div>
+            popup = <div></div>;
         }
-        return(
+        return (
             <div className={styles.container}>
-                    <div className={styles.flexContainer}>
-                        <div className={styles.plus} onClick={this.showPopup.bind(this)}>
-                            Add or update details
-                        </div>
-                        {popup}
+                <div className={styles.flexContainer}>
+                    <div className={styles.plus} onClick={this.showPopup.bind(this)}>
+                        Add or update details
                     </div>
-                    <UserProfile/>
+                    {popup}
+                </div>
+                <UserProfile/>
             </div>
         )
     }

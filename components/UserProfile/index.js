@@ -1,13 +1,13 @@
-import { ThreeSixty } from "@mui/icons-material";
+import {ThreeSixty} from "@mui/icons-material";
 import react from "react";
 import Moment from "react-moment";
-import { CloudinaryContext } from "cloudinary-react";
+import {CloudinaryContext} from "cloudinary-react";
 import styles from "./styles.module.css"
 
 class UserProfile extends react.Component {
     constructor(props) {
         super(props)
-        this.state={profile: "", workout_length_object: "", workout_history: ""}
+        this.state = {profile: "", workout_length_object: "", workout_history: ""}
     }
 
     componentDidMount() {
@@ -17,11 +17,11 @@ class UserProfile extends react.Component {
 
     getProfile() {
 
-        var xhr = new XMLHttpRequest();
-        var self = this
-        xhr.onreadystatechange = function() { 
+        const xhr = new XMLHttpRequest();
+        const self = this;
+        xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
-                var data = JSON.parse(xhr.responseText)
+                const data = JSON.parse(xhr.responseText);
                 if (data["operation"] == "error") {
                     self.setState({profile: "no profile yet"})
                 } else {
@@ -39,11 +39,11 @@ class UserProfile extends react.Component {
 
     getWorkoutHistory() {
 
-        var xhr = new XMLHttpRequest();
-        var self = this
-        xhr.onreadystatechange = function() { 
+        const xhr = new XMLHttpRequest();
+        const self = this;
+        xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
-                var data = JSON.parse(xhr.responseText)
+                const data = JSON.parse(xhr.responseText);
                 if (data["operation"] == "error") {
                     self.setState({workout_length_object: 0})
                 } else {
@@ -58,45 +58,47 @@ class UserProfile extends react.Component {
         xhr.open("GET", theUrl, true); // true for asynchronous 
         xhr.send(null);
     }
+
     render() {
+        let a;
         if (this.state.workout_length_object) {
-            var a = <Moment format="MM/DD/YY">{this.state.workout_length_object["TIMESTAMP"] * 1000}</Moment>}
-            else {
-                var a = "No workouts yet"
-            }
-        
-        return(
+            a = <Moment format="MM/DD/YY">{this.state.workout_length_object["TIMESTAMP"] * 1000}</Moment>;
+        } else {
+            a = "No workouts yet";
+        }
+
+        return (
             <div className={styles.container}>
-                    <div className={styles.leftImage}>
-                        <img className={styles.special} src={this.state.profile.image_url}/>
+                <div className={styles.leftImage}>
+                    <img className={styles.special} src={this.state.profile.image_url}/>
+                </div>
+                <div className={styles.itemContainer}>
+                    <div className={styles.item}>
+                        Name
                     </div>
-                    <div className={styles.itemContainer}>
-                        <div className={styles.item}>
-                            Name
-                        </div>
-                        <div className={styles.actualItem}>
-                            {this.state.profile.name}
-                        </div>
-                        <div className={styles.item}>
-                            City 
-                        </div>
-                        <div className={styles.actualItem}>
-                            {this.state.profile.city}  
-                        </div>
-                        <div className={styles.item}>
-                            Last Workout Date
-                        </div>
-                        <div className={styles.actualItem}>
-                            {a}
-                        </div>
-                        <div className={styles.item}>
-                            Total Workouts This Year
-                        </div>
-                        <div className={styles.actualItem}>
-                            {this.state.workout_history.length}
-                        </div>
-                        </div>
+                    <div className={styles.actualItem}>
+                        {this.state.profile.name}
                     </div>
+                    <div className={styles.item}>
+                        City
+                    </div>
+                    <div className={styles.actualItem}>
+                        {this.state.profile.city}
+                    </div>
+                    <div className={styles.item}>
+                        Last Workout Date
+                    </div>
+                    <div className={styles.actualItem}>
+                        {a}
+                    </div>
+                    <div className={styles.item}>
+                        Total Workouts This Year
+                    </div>
+                    <div className={styles.actualItem}>
+                        {this.state.workout_history.length}
+                    </div>
+                </div>
+            </div>
         )
     }
 }

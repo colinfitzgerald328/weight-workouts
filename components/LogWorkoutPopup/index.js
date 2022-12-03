@@ -15,21 +15,22 @@ class LogWorkoutPopup extends react.Component {
 
 
     render() {
-        return(
+        return (
             <div className={styles.basic}>
                 <Link href={{
-      pathname: '/', query: this.props.data
-    }}>
-                <div className={styles.action}>
-                    Main
+                    pathname: '/', query: this.props.data
+                }}>
+                    <div className={styles.action}>
+                        Main
                     </div>
                 </Link>
                 <Link href={{
-      pathname: '/profile', 
-      query: this.props.data}}>
-                <div className={styles.action2}>
-                    Profile
-                </div>
+                    pathname: '/profile',
+                    query: this.props.data
+                }}>
+                    <div className={styles.action2}>
+                        Profile
+                    </div>
                 </Link>
             </div>
         )
