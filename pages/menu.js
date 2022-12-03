@@ -2,13 +2,14 @@ import Head from "next/head";
 import react from "react";
 import MenuBar from "../components/MenuBar";
 import WorkoutBar from "../components/WorkoutBar";
+import LoadingSpinner from "./loading/loading";
 import styles from "./styles.module.css"
 
 
 class MenuPage extends react.Component {
     constructor(props) {
         super(props)
-        this.state = {data: []}
+        this.state = {data: [], noWorkoutsYet: false}
     }
 
     componentDidMount() {
@@ -22,7 +23,11 @@ class MenuPage extends react.Component {
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 const data = JSON.parse(xhr.responseText);
-                self.setState({data: data["feed"]})
+                if (data["operation"] == "error") {
+                    self.setState(({noWorkoutsYet: true}))
+                } else {
+                    self.setState({data: data["feed"]})
+                }
             }
         }
 
@@ -34,7 +39,7 @@ class MenuPage extends react.Component {
     }
 
     render() {
-        if (this.state.data != null) {
+        if (!this.state.noWorkoutsYet) {
             const workoutBarDivs = this.state.data.map(data => {
                 const timestamp = data["TIMESTAMP"];
                 const sets = data["sets"];
@@ -56,9 +61,11 @@ class MenuPage extends react.Component {
                               rel="stylesheet"></link>
                     </Head>
                     <MenuBar account_id={this.props.account_id} onLogOut={this.props.onLogOut}/>
-                        {workoutBarDivs}
+                    {workoutBarDivs}
                 </div>
             )
+        } else if (!this.state.noWorkoutsYet && this.state.data.length == 0) {
+            return (<LoadingSpinner></LoadingSpinner>)
         } else {
             return (<div className={styles.basic}>
                 <Head>
