@@ -13,7 +13,7 @@ class CustomMenuBar extends react.Component {
     render() {
         return (
             <div>
-                <div onClick={() => console.log(this.props)} className={styles.basic}>
+                <div className={styles.basic}>
                     <div className={styles.text}>
                         Log Workout
                     </div>
