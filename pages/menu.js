@@ -64,8 +64,8 @@ class MenuPage extends react.Component {
                     {workoutBarDivs}
                 </div>
             )
-        } else if (!this.state.noWorkoutsYet && this.state.data.length == 0) {
-            return (<LoadingSpinner></LoadingSpinner>)
+        } else if (this.state.data.length == 0) {
+            console.log("duhhhhhhhhhhh")
         } else {
             return (<div className={styles.basic}>
                 <Head>

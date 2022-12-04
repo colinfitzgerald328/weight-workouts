@@ -1,5 +1,4 @@
 import {Collapse, Text, Button} from "@nextui-org/react";
-import {BrowserRouter, Link} from 'react-router-dom'
 import styles from "./styles.module.css"
 import Moment from "react-moment";
 
@@ -15,14 +14,9 @@ export default function WorkoutBar(props) {
                 <Text css={{marginBottom: "10px"}}>
                     Total Reps: {props.total_reps}
                 </Text>
-                <BrowserRouter>
-                    <Link to={hrefLink}>
-                        <Button className={styles.button}
-                                color="gradient">View
-                            Details</Button>
-                    </Link>
-                </BrowserRouter>
-
+                <Button onClick={() => window.location.href = (hrefLink)} className={styles.button}
+                        color="gradient">View
+                    Details</Button>
             </Collapse>
         </Collapse.Group>
     );

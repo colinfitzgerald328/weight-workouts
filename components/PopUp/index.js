@@ -1,35 +1,37 @@
-import {Popover, Menu, Position, Button} from "evergreen-ui";
-import Link from "next/link";
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import PopupState, {bindTrigger, bindMenu} from 'material-ui-popup-state';
 
-export default function MainMenuPopup(props) {
+export default function MenuPopupState(props) {
     return (
-        <Popover
-            position={Position.BOTTOM_LEFT}
-            content={
-                <Menu>
-                    <Menu.Group marginRight={20}>
-                        <Link href={{
-                            pathname: '/logWorkout',
-                        }}>
-                            <Menu.Item>Log Workout</Menu.Item>
-                        </Link>
-                        <Link href={{
-                            pathname: '/profile',
-                        }}>
-                            <Menu.Item>Profile</Menu.Item>
-                        </Link>
-                        <Menu.Item onSelect={() => props.onLogOut()} secondaryText="⌘R">
-                            Log Out
-                        </Menu.Item>
-                    </Menu.Group>
-                </Menu>
-            }
-        >
-            <Button marginRight={20}>Menu</Button>
-        </Popover>
+        <PopupState variant="popover" popupId="demo-popup-menu">
+            {(popupState) => (
+                <React.Fragment>
+                    <Button variant="contained" {...bindTrigger(popupState)}>
+                        Menu
+                    </Button>
+                    <Menu anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'right',
+                    }}
+                          transformOrigin={{
+                              vertical: 'top',
+                              horizontal: 'right',
+                          }}{...bindMenu(popupState)}>
+                        <MenuItem onClick={() => window.location.href = "/profile"}>Profile</MenuItem>
+                        <MenuItem onClick={() => window.location.href = "/logWorkout"}>Log Workout</MenuItem>
+                        <MenuItem onClick={() => props.onLogOut()}>Logout</MenuItem>
+                    </Menu>
+                </React.Fragment>
+            )}
+        </PopupState>
     );
 }
 
+
+/* log workout, profile, log out */
 
 
 

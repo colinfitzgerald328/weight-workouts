@@ -55,18 +55,6 @@ class WorkoutPage extends react.Component {
     }
 
     render() {
-        const workoutCardDivs = this.state.data.map(data => {
-            const timestamp = data["TIMESTAMP"];
-            const exercise_type = data["exercise_type"];
-            const reps = data["reps"];
-            const weight = data["weight"];
-
-            return (
-                <div key={timestamp}>
-                    <WorkoutCards timestamp={timestamp} exercise_type={exercise_type} reps={reps} weight={weight}/>
-                </div>
-            )
-        });
         return (
             <div className={styles.basic}>
                 <Head>
@@ -76,8 +64,12 @@ class WorkoutPage extends react.Component {
                           href="https://colinfitzgerald328.github.io/assets/images/FitzGerald-Colin-Homework%206-01.jpg"/>
                 </Head>
                 <WorkoutMenuBar/>
-                <TypeCards type={this.state.stats.exercise_type} length={this.state.stats.length}/>
-                {workoutCardDivs}
+                <div className={styles.typeCards}>
+                                    <TypeCards type={this.state.stats.exercise_type} length={this.state.stats.length}/>
+                </div>
+                <div className={styles.workoutCardsMargin}>
+                                    <WorkoutCards data={this.state.data}/>
+                </div>
             </div>
         )
     }
