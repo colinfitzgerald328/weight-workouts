@@ -3,6 +3,7 @@ import react from "react";
 import styles from "./styles.module.css";
 import NewUserPopup from "./NewUserPopup";
 import MenuPage from "../pages/menu";
+import LoadingSpinner from "../pages/loading/loading";
 import {toaster} from "evergreen-ui";
 
 
@@ -17,7 +18,8 @@ class Root extends react.Component {
             data: {},
             results: {},
             account_id: [],
-            operation: {}
+            operation: {},
+            waiting: true
         })
         this.handlePassword = this.handlePassword.bind(this);
         this.handleUsername = this.handleUsername.bind(this);
@@ -26,7 +28,7 @@ class Root extends react.Component {
 
     componentDidMount() {
         if (localStorage.getItem('loggedInState')) {
-            this.setState({loggedIn: true})
+            this.setState({loggedIn: true, waiting: false})
         }
     }
 
@@ -93,6 +95,9 @@ class Root extends react.Component {
                     <MenuPage account_id={this.state.account_id} onLogOut={this.logOut.bind(this)}/>
                 </div>
             )
+        } else if (this.state.waiting) {
+            console.log("waiting, rendered this temporarily")
+            return (<LoadingSpinner/>)
         } else {
             if (this.state.showPopup == true) {
                 popup = <NewUserPopup onDismiss={this.hidePopup.bind(this)}/>;
