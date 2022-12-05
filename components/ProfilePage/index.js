@@ -1,7 +1,6 @@
-import Head from "next/head";
-import Link from "next/link";
 import UserProfile from "../UserProfile";
 import UpdateProfilePopup from "../UpdateProfilePopup";
+import { Button, Loading } from "@nextui-org/react";
 import react from "react";
 import styles from "./styles.module.css"
 
@@ -9,7 +8,7 @@ import styles from "./styles.module.css"
 class ProfilePage extends react.Component {
     constructor(props) {
         super(props)
-        this.state = {showPopup: false}
+        this.state = {showPopup: false, loading: true}
 
     }
 
@@ -31,9 +30,7 @@ class ProfilePage extends react.Component {
         return (
             <div className={styles.container}>
                 <div className={styles.flexContainer}>
-                    <div className={styles.plus} onClick={this.showPopup.bind(this)}>
-                        Add or update details
-                    </div>
+                    <Button css={{width: "100%"}}onClick={this.showPopup.bind(this)}>Update Profile</Button>
                     {popup}
                 </div>
                 <UserProfile/>
@@ -43,3 +40,6 @@ class ProfilePage extends react.Component {
 }
 
 export default ProfilePage
+
+
+
