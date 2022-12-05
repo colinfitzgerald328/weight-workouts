@@ -3,18 +3,20 @@ import react from "react";
 import WorkoutMenuBar from "../components/WorkoutMenuBar";
 import TypeCards from "../components/TypeCards";
 import WorkoutCards from "../components/WorkoutCards";
+import {Loading} from "@nextui-org/react";
 import styles from "./styles.module.css"
 
 
 class WorkoutPage extends react.Component {
     constructor(props) {
         super(props)
-        this.state = {data: [], stats: []}
+        this.state = {data: [], stats: [], loading: true}
     }
 
     componentDidMount() {
         this.getWorkoutDetails.bind(this)()
         this.getWorkoutStats.bind(this)()
+        this.setState({loading: false})
     }
 
 
@@ -55,23 +57,29 @@ class WorkoutPage extends react.Component {
     }
 
     render() {
-        return (
-            <div className={styles.basic}>
-                <Head>
-                    <title>Weight Workouts - by Colin FitzGerald</title>
-                    <meta></meta>
-                    <link rel="icon"
-                          href="https://colinfitzgerald328.github.io/assets/images/FitzGerald-Colin-Homework%206-01.jpg"/>
-                </Head>
-                <WorkoutMenuBar/>
-                <div className={styles.typeCards}>
-                                    <TypeCards type={this.state.stats.exercise_type} length={this.state.stats.length}/>
+        if (this.state.loading) {
+            return (
+                <Loading/>
+            )
+        } else {
+            return (
+                <div className={styles.basic}>
+                    <Head>
+                        <title>Weight Workouts - by Colin FitzGerald</title>
+                        <meta></meta>
+                        <link rel="icon"
+                              href="https://colinfitzgerald328.github.io/assets/images/FitzGerald-Colin-Homework%206-01.jpg"/>
+                    </Head>
+                    <WorkoutMenuBar/>
+                    <div className={styles.typeCards}>
+                        <TypeCards type={this.state.stats.exercise_type} length={this.state.stats.length}/>
+                    </div>
+                    <div className={styles.workoutCardsMargin}>
+                        <WorkoutCards data={this.state.data}/>
+                    </div>
                 </div>
-                <div className={styles.workoutCardsMargin}>
-                                    <WorkoutCards data={this.state.data}/>
-                </div>
-            </div>
-        )
+            )
+        }
     }
 }
 
