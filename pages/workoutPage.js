@@ -59,7 +59,16 @@ class WorkoutPage extends react.Component {
     render() {
         if (this.state.loading) {
             return (
-                <Loading/>
+                <div className={styles.basic}>
+                    <Head>
+                        <title>Weight Workouts - by Colin FitzGerald</title>
+                        <meta></meta>
+                        <link rel="icon"
+                              href="https://colinfitzgerald328.github.io/assets/images/FitzGerald-Colin-Homework%206-01.jpg"/>
+                    </Head>
+                    <WorkoutMenuBar/>
+                    <Loading/>
+                </div>
             )
         } else {
             return (
