@@ -65,6 +65,7 @@ class Root extends react.Component {
                 self.setState({operation: data["operation"]})
                 if (data["operation"] == 'success') {
                     localStorage.setItem('accountId', data["account_info"][0]["account_id"])
+                    console.log("success, setting local storage")
                 } else {
                     toaster.danger("Wrong password. Please try again!")
                 }
@@ -97,7 +98,11 @@ class Root extends react.Component {
             )
         } else if (this.state.waiting) {
             console.log("waiting, rendered this temporarily")
-            return (<LoadingSpinner/>)
+            return (
+                <div className={styles.basic}>
+                    <MenuPage account_id={this.state.account_id} onLogOut={this.logOut.bind(this)}/>
+                </div>
+            )
         } else {
             if (this.state.showPopup == true) {
                 popup = <NewUserPopup onDismiss={this.hidePopup.bind(this)}/>;
