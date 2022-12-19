@@ -33,7 +33,7 @@ export default function Profile(props) {
             .catch(err => console.log(err))
         console.log("this function was run ")
     }
-    
+
     function handleSubmit() {
         // listen for `load` event
         const xhr = new XMLHttpRequest();
@@ -114,6 +114,3 @@ export default function Profile(props) {
         </div>
     );
 }
-
-
-

@@ -87,7 +87,10 @@
 }
 
 .formContainer {
-    padding: 100px 0; 
+    padding: 100px 0;
+    background-color: dodgerblue;
+    height: 100vh;
+    display: flex;
 }
 
 .form {

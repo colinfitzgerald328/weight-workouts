@@ -3,8 +3,10 @@ import react from "react";
 import styles from "./styles.module.css";
 import NewUserPopup from "./NewUserPopup";
 import MenuPage from "../pages/menu";
-import LoadingSpinner from "../pages/loading/loading";
+import { Button } from "@nextui-org/react";
 import {toaster} from "evergreen-ui";
+import { Input } from '@nextui-org/react';
+import NewUserModal from "./NewUser/newUser";
 
 
 class Root extends react.Component {
@@ -18,8 +20,7 @@ class Root extends react.Component {
             data: {},
             results: {},
             account_id: [],
-            operation: {},
-            waiting: true
+            operation: {}
         })
         this.handlePassword = this.handlePassword.bind(this);
         this.handleUsername = this.handleUsername.bind(this);
@@ -30,11 +31,12 @@ class Root extends react.Component {
         if (localStorage.getItem('loggedInState')) {
             this.setState({loggedIn: true, waiting: false})
         }
+        console.log(localStorage.getItem('loggedInState'))
     }
 
     logOut() {
         window.localStorage.clear();
-        this.setState({loggedIn: false, data: {}, operation: {}})
+        this.setState({loggedIn: false, data: {}, operation: {}, password: "", username: ""})
     }
 
 
@@ -124,20 +126,18 @@ class Root extends react.Component {
                             Weight Workouts
                         </div>
                         <div className={styles.flexContainer}>
-                            <input className={styles.item1} type="text" name="name" placeholder="username"
+                            <Input css={{marginBottom: "10px", width: "200px", background: "black"}} type="text" name="name" placeholder="username"
                                    value={this.state.value} onChange={this.handleUsername}/>
-                            <input className={styles.item2} type="password" name="name" placeholder="password"
+                            <Input css={{marginBottom: "10px", width: "200px"}} type="password" name="name" placeholder="password"
                                    value={this.state.value} onChange={this.handlePassword}/>
                         </div>
-                        <div className={styles.submit} onClick={this.handleSubmit}>
+                        <Button className={styles.submit} onClick={this.handleSubmit}>
                             Submit
-                        </div>
+                        </Button>
                         <div className={styles.addNewUser}>
                             New here? Click this button to create a profile
                         </div>
-                        <div onClick={this.showPopup.bind(this)} className={styles.submit}>
-                            Create
-                        </div>
+                        <NewUserModal/>
                         {popup}
                     </div>
                 </div>
