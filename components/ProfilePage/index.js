@@ -68,7 +68,7 @@ export default function Profile(props) {
             <Button auto shadow onClick={handler}>
                 Update Profile
             </Button>
-            <Modal
+            <Modal css={{"width": "90%", "marginLeft": "auto", "marginRight": "auto"}}
                 closeButton
                 aria-labelledby="modal-title"
                 open={visible}
