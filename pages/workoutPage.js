@@ -67,7 +67,9 @@ class WorkoutPage extends react.Component {
                               href="https://colinfitzgerald328.github.io/assets/images/FitzGerald-Colin-Homework%206-01.jpg"/>
                     </Head>
                     <WorkoutMenuBar/>
-                    <Loading/>
+                    <div className={styles.loadingSpinner}>
+                        <Loading/>
+                    </div>
                 </div>
             )
         } else {
