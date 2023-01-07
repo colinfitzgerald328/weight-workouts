@@ -13,7 +13,7 @@ class MenuPage extends react.Component {
     }
 
     componentDidMount() {
-        this.getFeed.bind(this)()
+        setTimeout(this.getFeed.bind(this), 500)
     }
 
     getFeed() {
@@ -39,7 +39,7 @@ class MenuPage extends react.Component {
     }
 
     render() {
-        if (!this.state.noWorkoutsYet) {
+        if (!this.state.noWorkoutsYet && this.state.data.length != 0) {
             const workoutBarDivs = this.state.data.map(data => {
                 const timestamp = data["TIMESTAMP"];
                 const sets = data["sets"];
@@ -64,22 +64,24 @@ class MenuPage extends react.Component {
                     {workoutBarDivs}
                 </div>
             )
-        } else if (!this.state.noWorkoutsYet && this.state.data.length == 0) {
-            return (<div className={styles.basic}>
-                <Head>
-                    <title>Weight Workouts - by Colin FitzGerald</title>
-                    <meta></meta>
-                    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-                    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap"
-                          rel="stylesheet"></link>
-                </Head>
-                <MenuBar account_id={this.props.account_id} onLogOut={this.props.onLogOut}/>
-                <div className={styles.noWorkouts}>
-                    <LoadingSpinner/>
+        } else if (this.state.data.length == 0) {
+            return (
+                <div className={styles.basic}>
+                    <Head>
+                        <title>Weight Workouts - by Colin FitzGerald</title>
+                        <meta></meta>
+                        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+                        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
+                        <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap"
+                              rel="stylesheet"></link>
+                    </Head>
+                    <MenuBar account_id={this.props.account_id} onLogOut={this.props.onLogOut}/>
+                    <div className={styles.loadingSpinner}>
+                        <LoadingSpinner/>
+                    </div>
                 </div>
-            </div>)
-        } else {
+            )
+        } else if (this.state.noWorkoutsYet) {
             return (<div className={styles.basic}>
                 <Head>
                     <title>Weight Workouts - by Colin FitzGerald</title>

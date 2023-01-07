@@ -11,7 +11,7 @@ class UserProfile extends react.Component {
     }
 
     componentDidMount() {
-        this.getProfile.bind(this)()
+        setTimeout(this.getProfile.bind(this), 500)
         this.getWorkoutHistory.bind(this)()
         this.setState({loading: false})
     }
@@ -68,9 +68,11 @@ class UserProfile extends react.Component {
             a = "No workouts yet";
         }
 
-        if (this.state.loading) {
+        if (this.state.profile.length == 0) {
             return(
-                <Loading/>
+                <div className={styles.loadingSpinner}>
+                    <Loading/>
+                </div>
             )
         } else {
                  return (
