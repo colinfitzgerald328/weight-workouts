@@ -2,7 +2,7 @@ repo_name: colinfitzgerald328/weight-workouts
 report_id: fb523ff481f3dc45a932c8debfa335cc
 version: 0.1
 repo_type: Public
-timestamp: '2023-12-19T22:07:42+00:00'
+timestamp: '2024-01-05T08:19:55+00:00'
 requested_by: colinfitzgerald328
 provider: github
 branch: main
@@ -16,6 +16,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source_url: https://github.com/colinfitzgerald328/weight-workouts
   detection_source: Repo Metadata
 - name: JavaScript
   description: Lightweight, interpreted, object-oriented language with first-class
@@ -26,6 +27,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/colinfitzgerald328/weight-workouts
   detection_source: Repo Metadata
 - name: TypeScript
   description: A superset of JavaScript that compiles to clean JavaScript output
@@ -63,6 +65,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Frameworks (Full Stack)
   image_url: https://img.stackshare.io/service/1011/n1JRsFeB_400x400.png
+  detection_source_url: https://github.com/colinfitzgerald328/weight-workouts/blob/main/package.json
   detection_source: package.json
   last_updated_by: Colin FitzGerald
   last_updated_on: 2022-10-02 16:26:01.000000000 Z
@@ -102,6 +105,7 @@ tools:
   category: Application Hosting
   sub_category: Realtime Backend / API
   image_url: https://img.stackshare.io/service/116/cZLxNFZS.jpg
+  detection_source_url: https://github.com/colinfitzgerald328/weight-workouts/blob/main/package.json
   detection_source: package.json
   last_updated_by: Colin FitzGerald
   last_updated_on: 2022-10-08 19:27:07.000000000 Z
@@ -114,6 +118,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Code Review
   image_url: https://img.stackshare.io/service/3337/Q4L7Jncy.jpg
+  detection_source_url: https://github.com/colinfitzgerald328/weight-workouts/blob/main/package.json
   detection_source: package.json
   last_updated_by: Colin FitzGerald
   last_updated_on: 2022-10-02 16:26:01.000000000 Z
@@ -125,6 +130,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/colinfitzgerald328/weight-workouts
   detection_source: Repo Metadata
 - name: Jest
   description: Painless JavaScript Unit Testing
@@ -148,6 +154,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Front End Package Manager
   image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source_url: https://github.com/colinfitzgerald328/weight-workouts/blob/main/package.json
   detection_source: package.json
   last_updated_by: Colin FitzGerald
   last_updated_on: 2022-10-02 16:26:01.000000000 Z
@@ -160,6 +167,7 @@ tools:
   category: Assets and Media
   sub_category: Image Processing and Management
   image_url: https://img.stackshare.io/service/304/default_d0fb82038ec18f67ca33bf6ce0df0bffb427e94f.png
+  detection_source_url: https://github.com/colinfitzgerald328/weight-workouts/blob/main/package.json
   detection_source: package.json
   last_updated_by: Colin FitzGerald
   last_updated_on: 2022-12-19 04:13:56.000000000 Z
